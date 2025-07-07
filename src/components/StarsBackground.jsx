@@ -12,7 +12,8 @@ function StarsBackground() {
 
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // canvas.height = window.innerHeight;
+            canvas.height = window.offsetHeight;
             initStars();
         };
 
@@ -62,8 +63,7 @@ function StarsBackground() {
     return (
         <canvas
             ref={canvasRef}
-            className="stars-canvas w-full h-full bg-[var(--color-dark-blue)] block absolute top-0 left-0"
-
+            className="stars-canvas w-full h-full bg-[var(--color-dark-blue)]"
         ></canvas>
     );
 }

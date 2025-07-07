@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Button from '../components/Button';
 
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
+
     return (
         <header className="text-white shadow-md sticky top-0 z-50 bg-[var(--color-dark-blue)]">
             <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-                
                 {/* Logo */}
-                <Link to="/" className="text-xl sm:text-2xl font-title whitespace-nowrap">
+                <Link
+                    to="/"
+                    className="text-xl sm:text-2xl font-title whitespace-nowrap"
+                >
                     Laura Haas Dev Web.
                 </Link>
 
@@ -41,12 +43,10 @@ function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link
-                            to="/contact"
-                            className="bg-[var(--color-accent)] text-[var(--color-dark-blue)] font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all whitespace-nowrap"
-                        >
-                            Discutons projet
-                        </Link>
+                        <Button
+                            text="Discutons projet"
+                            link="/contact"
+                        />
                     </li>
                 </ul>
 
@@ -79,9 +79,30 @@ function Header() {
 
                     {/* Liens du menu */}
                     <ul className="space-y-10 text-2xl font-bold text-center">
-                        <li><Link onClick={() => setIsMobileMenuOpen(false)} to="/projet-lancement">Porteurs de projet</Link></li>
-                        <li><Link onClick={() => setIsMobileMenuOpen(false)} to="/professionnel-independant">Indépendants</Link></li>
-                        <li><Link onClick={() => setIsMobileMenuOpen(false)} to="/entreprise-locale">Entreprises locales</Link></li>
+                        <li>
+                            <Link
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                to="/projet-lancement"
+                            >
+                                Porteurs de projet
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                to="/professionnel-independant"
+                            >
+                                Indépendants
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                to="/entreprise-locale"
+                            >
+                                Entreprises locales
+                            </Link>
+                        </li>
                         <li>
                             <Link
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -94,7 +115,6 @@ function Header() {
                     </ul>
                 </div>
             )}
-
         </header>
     );
 }
