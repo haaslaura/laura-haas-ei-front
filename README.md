@@ -26,6 +26,7 @@ npm run dev
 
 ## 📁 Arborescence du projet
 
+```bash
 src/
 ├── assets/                         # Images, SVGs, logos, icônes
 ├── components/                     # Composants réutilisables (ex: CardSection, Hero, Stage...)
@@ -45,3 +46,4 @@ src/
 ├── Index.jsx                       # Point d'entrée principal
 ├── styles/
 │ ├── index.css                     # Tailwind
+```
