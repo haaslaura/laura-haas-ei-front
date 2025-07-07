@@ -2,7 +2,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[var(--color-dark-blue)] text-[var(--color-slate)] py-8">
+        <footer className="bg-[#020c1b] text-white py-8">
             <div className="container mx-auto px-6 flex flex-col items-center text-center">
                 <p>&copy; {currentYear} Laura Haas. Tous droits réservés.</p>
                 <p className="text-sm mt-2">Fait avec ♥ à Strasbourg, France.</p>
