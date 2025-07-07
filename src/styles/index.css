@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-dark-blue: #0a192f; /* Bleu nuit pour le fond, le footer */
+    --color-light-slate: #ccd6f6; /* Texte principal clair */
+    --color-slate: #8892b0; /* Texte secondaire, moins important */
+    --color-accent: #ffca42; /* Ocre/doré pour les CTA et accents */
+    --color-white: #ffffff;
+    --color-light-bg: #f8f9fa; /* Fond clair pour certaines sections */
+
+    --font-sans: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    --radius-sm: 0.25rem;
+
+    --shadow-sm: 0 2px 3px 0px rgba(0, 0, 0, 0.3);
+
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-light-bg);
+    color: #333;
+}
+
+/* Police pour les titres principaux */
+.font-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Police pour les sous-titres et citations */
+.font-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+/* Style général pour les titres */
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Animation douce pour les transitions */
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+@layer utilities {
+    @keyframes fadeSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-slide {
+        animation: fadeSlide 0.4s ease-out both;
+    }
+}
