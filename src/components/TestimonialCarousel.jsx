@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 const TestimonialCarousel = ({ testimonials }) => {
     const [index, setIndex] = useState(0);
     const [visibleCount, setVisibleCount] = useState(1);
@@ -36,7 +35,6 @@ const TestimonialCarousel = ({ testimonials }) => {
 
     return (
         <div className="flex flex-row gap-2 items-center min-h-[400px] md:min-h-[500px]">
-            
             {/* Flèche de gauche */}
             <button
                 onClick={handlePrev}
@@ -55,9 +53,9 @@ const TestimonialCarousel = ({ testimonials }) => {
                 className="
                 flex flex-row gap-8 justify-center items-center
                 max-w-4xl opacity-0 animate-fadeIn
-            ">
+            "
+            >
                 {visibleTestimonials.map((t, i) => (
-                    
                     <div
                         key={i}
                         className="
@@ -69,7 +67,6 @@ const TestimonialCarousel = ({ testimonials }) => {
                         <p className="font-subtitle text-lg text-gray-700">"{t.text}"</p>
                         <p className="mt-4 font-bold text-right">{t.author}</p>
                     </div>
-
                 ))}
             </div>
 

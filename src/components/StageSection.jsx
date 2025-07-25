@@ -1,3 +1,4 @@
+import Section from '../layouts/Section';
 import Stage from './Stage';
 
 const contentStageSection = [
@@ -25,18 +26,19 @@ const contentStageSection = [
 
 const StageSection = () => {
     return (
-        <section className="py-20 bg-white">
+
+        <Section bgColor='white' paddingY='py-20'>
             <div className="container mx-auto px-6">
-                
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Votre projet, étape par étape</h2>
-                
+
                 <div className="relative flex flex-col md:flex-row justify-between md:items-start text-center">
                     {/* Ligne de progression (visible sur desktop) */}
-                    <div className="
+                    <div
+                        className="
                         hidden md:block absolute top-5/11 left-0
                         w-full h-0.5 bg-gray-300 translate-y-[-50%] z-0
-                    ">
-                    </div>
+                    "
+                    ></div>
 
                     {contentStageSection.map((stage) => (
                         <Stage
@@ -48,7 +50,7 @@ const StageSection = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </Section>
     );
 };
 

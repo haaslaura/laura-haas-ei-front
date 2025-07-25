@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const SimpleCard = ({
-    icon,
-    title,
-    text,
-    link,
-    textLink="Découvrir →"
-}) => {
-   
+const SimpleCard = ({ icon, title, text, link, textLink = 'Découvrir →' }) => {
     return (
         <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-all w-xs">
             {icon}

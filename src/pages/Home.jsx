@@ -8,7 +8,10 @@ import TestimonialSection from '../components/TestimonialSection';
 const Home = () => {
     return (
         <section className="home">
-            <Hero />
+            <Hero
+                title="Un site web sur-mesure qui travaille vraiment pour vous"
+                keyWord='vraiment'
+            />
             <CardSection />
             <StageSection />
             <OffersSection />

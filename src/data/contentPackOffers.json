@@ -1,32 +1,31 @@
 [
     {
-        "id" : "1",
-        "title" : "Pack Lancement",
-        "subtitle" : "Idéal pour démarrer",
-        "price" : "À partir de 1200€",
-        "features" : [
+        "id": "1",
+        "title": "Pack Lancement",
+        "subtitle": "Idéal pour démarrer",
+        "price": "À partir de 1200€",
+        "features": [
             "Site vitrine 1 à 3 pages",
             "Formulaire de contact",
             "Accompagnement contenu",
             "Adapté mobile & tablette"
         ],
-        "buttonText" : "Voir les packs",
-        "buttonLink" : "/contact"
+        "buttonText": "Voir les packs",
+        "buttonLink": "/contact"
     },
     {
-        "id" : "2",
-        "title" : "Pack Sur-Mesure",
-        "subtitle" : "Pour un projet unique",
-        "price" : "Sur Devis",
-        "features" : [
+        "id": "2",
+        "title": "Pack Sur-Mesure",
+        "subtitle": "Pour un projet unique",
+        "price": "Sur Devis",
+        "features": [
             "Nombre de pages illimité",
             "Intégration blog, portfolio...",
             "Fonctionnalités avancées",
             "Accompagnement à la prise en main",
             "Et bien plus encore..."
         ],
-        "buttonText" : "Demander un devis",
-        "buttonLink" : "/contact"
+        "buttonText": "Demander un devis",
+        "buttonLink": "/contact"
     }
-
 ]
