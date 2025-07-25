@@ -27,10 +27,16 @@ const StageSection = () => {
     return (
         <section className="py-20 bg-white">
             <div className="container mx-auto px-6">
+                
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Votre projet, étape par étape</h2>
-                <div className="relative flex flex-col md:flex-row justify-between items-center text-center">
+                
+                <div className="relative flex flex-col md:flex-row justify-between items-start text-center">
                     {/* Ligne de progression (visible sur desktop) */}
-                    <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-300 translate-y-[-50%] z-0"></div>
+                    <div className="
+                        hidden md:block absolute top-5/11 left-0
+                        w-full h-0.5 bg-gray-300 translate-y-[-50%] z-0
+                    ">
+                    </div>
 
                     {contentStageSection.map((stage) => (
                         <Stage
