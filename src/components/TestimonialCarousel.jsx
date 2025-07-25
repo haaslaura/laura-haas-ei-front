@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 const TestimonialCarousel = ({ testimonials }) => {
     const [index, setIndex] = useState(0);
     const [visibleCount, setVisibleCount] = useState(1);
@@ -34,12 +35,12 @@ const TestimonialCarousel = ({ testimonials }) => {
     }
 
     return (
-        <div className="relative flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+        <div className="flex flex-row gap-2 items-center min-h-[400px] md:min-h-[500px]">
+            
             {/* Flèche de gauche */}
             <button
                 onClick={handlePrev}
                 className="
-                    absolute left-0 top-1/2 -translate-y-1/2 
                     bg-gray-200 hover:bg-gray-300 
                     rounded-full p-2 z-10
                 "
@@ -49,45 +50,33 @@ const TestimonialCarousel = ({ testimonials }) => {
             </button>
 
             {/* Caroussel */}
-            {/* <div
-                key={fadeKey}
-                className="
-                    grid grid-cols-1 md:grid-cols-2 gap-8 
-                    max-w-4xl w-full
-                    justify-items-center 
-                    opacity-0 animate-fadeIn
-                "
-            >
-                {visibleTestimonials.map((t, i) => (
-                    <div
-                        key={i}
-                        className="bg-gray-50 p-8 rounded-lg shadow transition-shadow"
-                    >
-                        <p className="font-subtitle text-lg text-gray-700">"{t.text}"</p>
-                        <p className="mt-4 font-bold text-right">{t.author}</p>
-                    </div>
-                ))}
-            </div> */}
             <div
                 key={fadeKey}
-                className="flex flex-row flex-nowrap justify-center gap-8 max-w-4xl w-full opacity-0 animate-fadeIn"
-            >
+                className="
+                flex flex-row gap-8 justify-center items-center
+                max-w-4xl opacity-0 animate-fadeIn
+            ">
                 {visibleTestimonials.map((t, i) => (
+                    
                     <div
                         key={i}
-                        className="bg-gray-50 p-8 rounded-lg shadow transition-shadow max-w-md"
+                        className="
+                            bg-gray-50 p-8 flex-1
+                            rounded-lg shadow transition-shadow
+                            max-w-md
+                        "
                     >
                         <p className="font-subtitle text-lg text-gray-700">"{t.text}"</p>
                         <p className="mt-4 font-bold text-right">{t.author}</p>
                     </div>
+
                 ))}
             </div>
 
             {/* Flèche de droite */}
             <button
                 onClick={handleNext}
-                className="
-                    absolute right-0 top-1/2 -translate-y-1/2 
+                className=" 
                     bg-gray-200 hover:bg-gray-300 
                     rounded-full p-2 z-10
                 "

@@ -30,7 +30,7 @@ const StageSection = () => {
                 
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Votre projet, étape par étape</h2>
                 
-                <div className="relative flex flex-col md:flex-row justify-between items-start text-center">
+                <div className="relative flex flex-col md:flex-row justify-between md:items-start text-center">
                     {/* Ligne de progression (visible sur desktop) */}
                     <div className="
                         hidden md:block absolute top-5/11 left-0
