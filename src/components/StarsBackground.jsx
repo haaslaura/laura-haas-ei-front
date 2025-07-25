@@ -12,8 +12,8 @@ function StarsBackground() {
 
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
-            // canvas.height = window.innerHeight;
-            canvas.height = window.offsetHeight;
+            canvas.height = window.innerHeight;
+            // canvas.height = window.offsetHeight;
             initStars();
         };
 
