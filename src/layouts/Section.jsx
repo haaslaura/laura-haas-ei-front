@@ -7,20 +7,14 @@ const styleOptions = {
     },
 };
 
-const Section = ({
-    bgColor = 'grey',
-    paddingY = 'py-20',
-    children
-}) => {
-
+const Section = ({ bgColor = 'grey', paddingY = 'py-20', children }) => {
     const styles = styleOptions[bgColor] || styleOptions.grey;
 
     return (
-        <section className={`${paddingY} ${styles.background}`}>
+        <section className={`${paddingY} ${styles.background} flex flex-col items-center justify-center`}>
             {children}
         </section>
     );
-}
-
+};
 
 export default Section;

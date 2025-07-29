@@ -1,38 +1,74 @@
-import CallToAction from '../components/CallToAction';
-import CardSection from '../components/CardSection';
 import Hero from '../components/Hero';
-import OffersSection from '../components/OffersSection';
+import CardSection from '../components/CardSection';
 import StageSection from '../components/StageSection';
+import OffersSection from '../components/OffersSection';
 import TestimonialSection from '../components/TestimonialSection';
+import CallToAction from '../components/CallToAction';
+
+const homePackOffers = [
+    {
+        id: '1',
+        title: 'Pack Lancement',
+        subtitle: 'Idéal pour démarrer',
+        price: 'À partir de 1200€',
+        features: [
+            'Site vitrine 1 à 3 pages',
+            'Formulaire de contact',
+            'Accompagnement contenu',
+            'Adapté mobile & tablette',
+        ],
+        displayButton: true,
+        buttonText: 'Voir les packs',
+        buttonLink: '/contact',
+        activePopular: false,
+    },
+    {
+        id: '2',
+        title: 'Pack Sur-Mesure',
+        subtitle: 'Pour un projet unique',
+        price: 'Sur Devis',
+        features: [
+            'Nombre de pages illimité',
+            'Intégration blog, portfolio...',
+            'Fonctionnalités avancées',
+            'Accompagnement à la prise en main',
+            'Et bien plus encore...',
+        ],
+        displayButton: true,
+        buttonText: 'Demander un devis',
+        buttonLink: '/contact',
+        activePopular: true,
+    },
+];
 
 const Home = () => {
     return (
         <section className="home">
             <Hero
                 title="Un site web sur-mesure qui travaille vraiment pour vous"
-                keyWord='vraiment'
+                keyWord="vraiment"
             />
             <CardSection />
             <StageSection />
-            <OffersSection />
+            <OffersSection offers={homePackOffers} />
             <TestimonialSection />
             <CallToAction
                 title={'Prêt à donner vie à votre projet\u00A0?'}
-                bigTitle={true}
+                displayTitle={true}
                 subtitle={'Contactez-moi pour un échange sans engagement. Le café est pour moi (même en visio)\u00A0!'}
                 linkContent="Contactez-moi"
                 link="/contact"
-                linkAsButton={true}
-                separation={true}
+                displayLinkLikeAButton={true}
+                displaySeparation={true}
             />
             <CallToAction
                 title={'Vous êtes une agence\u00A0?'}
-                bigTitle={false}
+                displayTitle={false}
                 subtitle="Je collabore en marque blanche et propose des renforts fiables en développement front-end."
                 linkContent="Contactez-moi"
                 link="/contact"
-                linkAsButton={false}
-                separation={false}
+                displayLinkLikeAButton={false}
+                displaySeparation={false}
             />
         </section>
     );

@@ -1,17 +1,24 @@
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-const CallToAction = ({ title, bigTitle, subtitle, linkContent, link, linkAsButton, separation }) => {
+const CallToAction = ({
+    title = 'Prêt à donner vie à votre projet\u00A0?',
+    displayTitle = 'true',
+    subtitle = 'Contactez-moi pour un échange sans engagement',
+    linkContent = 'Contactez-moi',
+    link = '/contact',
+    displayLinkLikeAButton = 'true',
+    displaySeparation = 'true',
+}) => {
     return (
         <section className="bg-[var(--color-dark-blue)] text-white flex flex-col items-center">
             <div
                 className={
-                    // "mx-auto px-6 py-16 text-center " +
-                    'cta-lh-container mx-4 py-16 text-center ' + (separation ? 'border-b border-gray-700' : '')
+                    'cta-lh-container mx-4 py-16 text-center ' + (displaySeparation ? 'border-b border-gray-700' : '')
                 }
             >
                 {/* Display CtA title */}
-                {bigTitle ? (
+                {displayTitle ? (
                     <h2 className="text-3xl font-bold mb-4">{title}</h2>
                 ) : (
                     <h3 className="text-xl font-bold mb-3">{title}</h3>
@@ -19,7 +26,7 @@ const CallToAction = ({ title, bigTitle, subtitle, linkContent, link, linkAsButt
                 <p className="text-[var(--color-slate)] mb-8">{subtitle}</p>
 
                 {/* Display CtA button like a simple link or a button */}
-                {linkAsButton ? (
+                {displayLinkLikeAButton ? (
                     <Button
                         text={linkContent}
                         link={link}

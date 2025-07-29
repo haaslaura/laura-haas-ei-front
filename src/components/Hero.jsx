@@ -9,7 +9,6 @@ const Hero = ({
     buttonLink = '/contact',
     starsBg = true,
 }) => {
-
     // Fonction pour mettre en évidence un mot spécifique dans le titre
     const highlightWord = (text, word) => {
         const parts = text.split(word);

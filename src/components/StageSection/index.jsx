@@ -1,5 +1,7 @@
-import Section from '../layouts/Section';
+import Content from '../../layouts/Content';
+import Section from '../../layouts/Section';
 import Stage from './Stage';
+import TitleAndSubDisplay from '../TitleAndSubDisplay';
 
 const contentStageSection = [
     {
@@ -26,18 +28,24 @@ const contentStageSection = [
 
 const StageSection = () => {
     return (
+        <Section
+            bgColor="white"
+            paddingY="py-20"
+        >
+            <Content maxW="max-w-6xl">
+                <TitleAndSubDisplay
+                    title="Votre projet, étape par étape"
+                    subtitleVisible={false}
+                    subtitleContent=""
+                />
 
-        <Section bgColor='white' paddingY='py-20'>
-            <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Votre projet, étape par étape</h2>
-
-                <div className="relative flex flex-col md:flex-row justify-between md:items-start text-center">
+                <div className="relative flex flex-col md:flex-row justify-between md:items-start text-center mt-12">
                     {/* Ligne de progression (visible sur desktop) */}
                     <div
                         className="
-                        hidden md:block absolute top-5/11 left-0
-                        w-full h-0.5 bg-gray-300 translate-y-[-50%] z-0
-                    "
+                            hidden md:block absolute top-5/11 left-0
+                            w-full h-0.5 bg-gray-300 translate-y-[-50%] z-0
+                        "
                     ></div>
 
                     {contentStageSection.map((stage) => (
@@ -49,7 +57,7 @@ const StageSection = () => {
                         />
                     ))}
                 </div>
-            </div>
+            </Content>
         </Section>
     );
 };

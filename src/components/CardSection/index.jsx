@@ -1,9 +1,13 @@
-import SimpleCard from './SimpleCard';
-
+// Icones
 import TipsAndUpdatesRoundedIcon from '@mui/icons-material/TipsAndUpdatesRounded';
 import FaceRetouchingNaturalRoundedIcon from '@mui/icons-material/FaceRetouchingNaturalRounded';
 import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
-import Section from '../layouts/Section';
+
+// Import
+import SimpleCard from './SimpleCard';
+import Section from '../../layouts/Section';
+import Content from '../../layouts/Content';
+import TitleAndSubDisplay from '../TitleAndSubDisplay';
 
 const contentCardSection = [
     {
@@ -33,21 +37,29 @@ const contentCardSection = [
 
 const CardSection = () => {
     return (
-        <Section bgColor='grey' paddingY='py-26'>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Quel est votre projet ?</h2>
+        <Section
+            bgColor="grey"
+            paddingY="py-26"
+        >
+            <Content maxW="max-w-5xl">
+                <TitleAndSubDisplay
+                    title="Quel est votre projet ?"
+                    subtitle=""
+                />
 
-            <div className="grid md:grid-cols-3 justify-center gap-8">
-                {contentCardSection.map((card) => (
-                    <SimpleCard
-                        key={card.title}
-                        icon={<card.icon fontSize="large" />}
-                        title={card.title}
-                        text={card.content}
-                        link={card.link}
-                        textLink={card.linkContent}
-                    />
-                ))}
-            </div>
+                <div className="grid md:grid-cols-3 justify-center gap-8 mt-14">
+                    {contentCardSection.map((card) => (
+                        <SimpleCard
+                            key={card.title}
+                            icon={<card.icon fontSize="large" />}
+                            title={card.title}
+                            text={card.content}
+                            link={card.link}
+                            textLink={card.linkContent}
+                        />
+                    ))}
+                </div>
+            </Content>
         </Section>
     );
 };
