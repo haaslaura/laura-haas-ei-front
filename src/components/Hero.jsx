@@ -31,12 +31,14 @@ const Hero = ({
             )}
 
             {/* CONTENU */}
-            <div className="
+            <div
+                className="
                 relative z-10
                 max-w-5xl
                 md:py-24 mx-4
                 flex flex-col items-center text-center
-            ">
+            "
+            >
                 <h1 className="text-white text-4xl md:text-6xl font-title leading-tight bg-(--color-dark-blue) rounded-xl px-6 py-8">
                     {highlightWord(title, keyWord)}
                 </h1>
