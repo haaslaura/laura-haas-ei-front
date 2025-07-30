@@ -3,9 +3,7 @@ import Section from '../../layouts/Section';
 import Content from '../../layouts/Content';
 import PortfolioCard from './PortfolioCard';
 
-
 const PortfolioSection = ({ portfolioData }) => {
-    
     return (
         <Section
             bgColor="grey"
@@ -16,7 +14,7 @@ const PortfolioSection = ({ portfolioData }) => {
                     title="Ils se sont lancés avec succès"
                     subtitleVisible={false}
                 />
-                
+
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {portfolioData.map((project, i) => (
                         <PortfolioCard

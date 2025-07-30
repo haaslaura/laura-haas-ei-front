@@ -7,7 +7,6 @@ import TitleAndSubDisplay from '../components/TitleAndSubDisplay';
 import PortfolioSection from '../components/PortfolioSection';
 import portfolioCollection from '../data/portfolioCollection.json';
 
-
 const projectStarterOffers = [
     {
         id: '3',
@@ -124,7 +123,9 @@ const ProjectStarter = () => {
                             </a>
                         </div>
                         <div className="bg-light-bg p-8 rounded-lg max-w-xs">
-                            <h3 className="font-title text-2xl font-bold text-accent">Offre “Maintenance & Évolutions”</h3>
+                            <h3 className="font-title text-2xl font-bold text-accent">
+                                Offre “Maintenance & Évolutions”
+                            </h3>
                             <p className="mt-2 text-xl font-bold text-dark-space">Sur devis</p>
                             <p className="mt-4 text-[#687087]">
                                 Un site web vit. Je vous accompagne pour le garder à jour, performant et sécurisé :
@@ -146,7 +147,9 @@ const ProjectStarter = () => {
 
             {/* <!-- ========= MINI PORTFOLIO ========= --> */}
             <PortfolioSection
-                portfolioData={portfolioCollection.filter(project => project.category && project.category.includes('starter'))}
+                portfolioData={portfolioCollection.filter(
+                    (project) => project.category && project.category.includes('starter'),
+                )}
             />
 
             {/* <section className="py-20 md:py-28 bg-light-bg">
@@ -189,8 +192,8 @@ const ProjectStarter = () => {
                         <h2 className="text-3xl md:text-4xl font-bold font-title">Vous gardez le contrôle</h2>
                         <p className="mt-4 max-w-2xl mx-auto text-lg text-light-slate">
                             Mon but est de vous rendre autonome. Chaque site livré s'accompagne d'une{' '}
-                            <strong className="text-accent">formation personnalisée</strong> pour que vous puissiez gérer
-                            vos contenus simplement. Et je reste toujours disponible pour la suite.
+                            <strong className="text-accent">formation personnalisée</strong> pour que vous puissiez
+                            gérer vos contenus simplement. Et je reste toujours disponible pour la suite.
                         </p>
                     </div>
                 </Content>

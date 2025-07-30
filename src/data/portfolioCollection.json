@@ -1,27 +1,21 @@
 [
     {
         "id": "1",
-        "category": [
-            "starter", "independent", "business"
-        ],
+        "category": ["starter", "independent", "business"],
         "title": "Site Vitrine pour Artisan",
         "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis.",
         "link": "#"
     },
     {
         "id": "2",
-        "category": [
-            "starter", "independent"
-        ],
+        "category": ["starter", "independent"],
         "title": "Site pour Coach Indépendant",
         "text": "Mise en avant de la personnalité, des offres de coaching et intégration d'un calendrier de réservation.",
         "link": "#"
     },
     {
         "id": "3",
-        "category": [
-            "independent", "business"
-        ],
+        "category": ["independent", "business"],
         "title": "Portfolio Photographe",
         "text": "Un portfolio moderne pour exposer les réalisations, gérer les galeries et attirer de nouveaux clients.",
         "link": "#"

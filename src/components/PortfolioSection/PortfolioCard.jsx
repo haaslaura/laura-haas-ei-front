@@ -1,7 +1,5 @@
 const PortfolioCard = ({ title, text }) => {
-    
     return (
-
         <div className="rounded-lg overflow-hidden shadow-xl group flex flex-col h-[400px] bg-dark-blue">
             {/* <a
                 href={projectContent.link}
