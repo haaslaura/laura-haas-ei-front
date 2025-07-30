@@ -1,22 +1,55 @@
-const PortfolioCard = ({ title, text }) => {
+import { mediaPathResolver } from '../../services/mediaPathResolver';
+import Button from '../Button';
+
+/**
+ * Composant d'affichage d'une carte de projet dans le portfolio.
+ *
+ * @param {Object} props
+ * @param {string} props.title - Titre du projet.
+ * @param {string} props.text - Description du projet.
+ * @param {string} props.picture - Nom du fichier image à afficher (dans `assets/`).
+ * @param {string} props.projectLink - Lien vers le projet (site ou démo).
+ *
+ * @returns {JSX.Element} Carte visuelle cliquable avec image et texte.
+ */
+
+const PortfolioCard = ({ title, text, picture, projectLink }) => {
+    const media = mediaPathResolver(picture);
+
     return (
-        <div className="rounded-lg overflow-hidden shadow-xl group flex flex-col h-[400px] bg-dark-blue">
-            {/* <a
-                href={projectContent.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block h-1/2 overflow-hidden"
-                tabIndex={0}
-            >
+        <div
+            className="group rounded-lg overflow-hidden shadow-xl bg-(--color-dark-blue) h-[380px] flex flex-col transition-transform duration-300">
+            {/* Partie image */}
+            <div className="relative h-1/2 overflow-hidden">
                 <img
-                    src={`https://placehold.co/600x400/0A192F/E6EFFF?text=${encodeURIComponent(projectContent.title)}`}
+                    src={media}
                     alt=""
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-            </a> */}
-            <div className="p-6 flex-1 flex flex-col justify-center">
-                <h3 className="font-title text-xl font-bold text-white">{title}</h3>
-                <p className="mt-2 text-slate">{text}</p>
+                {/* Overlay noir transparent */}
+                <div className="absolute inset-0 bg-black/55 flex items-center justify-center px-4">
+                    <h3 className="text-white text-xl font-title text-center leading-snug drop-shadow-lg">{title}</h3>
+                </div>
+            </div>
+
+            {/* Contenu texte */}
+            <div className="flex-1 p-6 flex flex-col items-start justify-center gap-6">
+                <p className="text-(--color-slate)">{text}</p>
+
+                <div className="flex flex-row gap-6 items-center">
+                    <Button
+                        text="Voir le site"
+                        link={projectLink}
+                        blank={true}
+                    />
+                    <button
+                        className="text-(--color-accent) hover:underline focus-visible:outline focus-visible:outline-(--color-accent) rounded"
+                        aria-expanded="false"
+                        aria-controls={`project-details-${title.replace(/\s/g, '-').toLowerCase()}`}
+                    >
+                        En savoir plus
+                    </button>
+                </div>
             </div>
         </div>
     );

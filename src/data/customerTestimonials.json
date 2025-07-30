@@ -1,14 +1,38 @@
 [
     {
+        "id": 1,
+        "category": ["independent"],
         "text": "Laura a su transposer mes idées vagues à la base en une réalisation au-delà de mes attentes. […] Elle a su utiliser un langage compréhensible pour un novice comme moi et a réussi à me transmettre sa passion.",
         "author": "-\u00A0Thierry Maître, Gérant, Consultant et Formateur TM Consulting"
     },
     {
+        "id": 2,
+        "category": ["starter", "independent"],
         "text": "J'avais en tête des idées très précises du résultat auquel je voulais aboutir, mais aucune idée des moyens techniques pour y arriver, et, évidemment, un budget contraint. J'ai apprécié l'encadrement que m'a proposé Laura dans sa prestation. Beaucoup de rigueur, des points d'étapes clairs, une pédagogie incomparable.",
         "author": "-\u00A0Sophia Huynh-Quan-Chieu, Experte en identité de marque"
     },
     {
+        "id": 3,
+        "category": ["independent"],
         "text": "En plus d'une maîtrise parfaite de la création de sites web, Laura se révèle être une consultante avisée, patiente et très pédagogue... Autant de facettes qui font d'elle la prestataire idéale pour votre projet web\u00A0!",
         "author": "-\u00A0Cyril Leclerc, Chargé de promotion et de développement culturel"
+    },
+    {
+        "id": 4,
+        "category": ["business"],
+        "text": "Super boulot de Laura qui a très bien saisi l'esprit de l'association Jalmalv et qui a réalisé un site internet esthétique et fonctionnel. Belles qualités pédagogiques et humaines, bravo\u00A0!",
+        "author": "-\u00A0Emmanuel Aigueperse, membre de la commission communication de l'Association JALMALV"
+    },
+    {
+        "id": 5,
+        "category": ["starter", "independent"],
+        "text": "Empathique, patiente et créative, Laura est une professionnelle de grande qualité, elle touche à l'excellence\u00A0! En effet, elle a parfaitement compris mes attentes et m'a même proposé des détails qui me correspondaient tant avec ma personnalité qu'avec mon site. Voilà qui résume joliment son travail\u00A0: Laura saura faire un site à votre image",
+        "author": "-\u00A0Karin Blin Doublet, psychothérapeute"
+    },
+    {
+        "id": 6,
+        "category": ["starter"],
+        "text": "Préparation, conception, structuration, intégration, sécurisation, référencement et RGPD\u00A0: Laura a réalisé un superbe travail pour réaliser un site à mon image, fluide et intégrant bien sûr un portfolio pour montrer mes vidéos. Grâce à sa formation et au support ensuite laissé à ma disposition, je peux aujourd'hui intervenir moi-même sur mon site en toute liberté\u00A0!",
+        "author": "-\u00A0Claire Maechling, Réalisatrice"
     }
 ]

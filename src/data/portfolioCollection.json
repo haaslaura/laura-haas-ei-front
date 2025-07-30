@@ -2,22 +2,41 @@
     {
         "id": "1",
         "category": ["starter", "independent", "business"],
-        "title": "Site Vitrine pour Artisan",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis.",
-        "link": "#"
+        "title": "Atelier la Bigorne",
+        "cover": "atelier-la-bigorne.webp",
+        "link": "https://nicolaspalmade-coutelier.fr",
+        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
     },
     {
         "id": "2",
-        "category": ["starter", "independent"],
-        "title": "Site pour Coach Indépendant",
-        "text": "Mise en avant de la personnalité, des offres de coaching et intégration d'un calendrier de réservation.",
-        "link": "#"
+        "category": ["starter", "independent", "business"],
+        "title": "L'Appel d'Être magazine",
+        "cover": "lappel-d-etre.webp",
+        "link": "https://lappel-detre-magazine.com",
+        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
     },
     {
         "id": "3",
-        "category": ["independent", "business"],
-        "title": "Portfolio Photographe",
-        "text": "Un portfolio moderne pour exposer les réalisations, gérer les galeries et attirer de nouveaux clients.",
-        "link": "#"
+        "category": ["starter", "independent", "business"],
+        "title": "L'Art et la Matière",
+        "cover": "lart-et-la-matiere-cecile-roger.webp",
+        "link": "https://www.lartetlamatiere.org",
+        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
+    },
+    {
+        "id": "4",
+        "category": ["starter", "independent", "business"],
+        "title": "Travaux Béton & Structures",
+        "cover": "travaux-beton-et-structures.webp",
+        "link": "https://tbs67.fr",
+        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
+    },
+    {
+        "id": "5",
+        "category": ["starter", "independent", "business"],
+        "title": "VueZen app",
+        "cover": "vuezenapp.webp",
+        "link": "https://vuezenapp.laura-haas.dev",
+        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
     }
 ]
