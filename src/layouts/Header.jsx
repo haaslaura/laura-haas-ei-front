@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Button from '../components/Button';
 
 function Header() {
@@ -19,28 +19,34 @@ function Header() {
                 {/* Menu principal (caché sur petits écrans) */}
                 <ul className="hidden lg:flex items-center space-x-6 text-sm xl:text-base">
                     <li>
-                        <Link
+                        <NavLink
                             to="/projet-lancement"
-                            className="hover:text-[var(--color-accent)] transition-all"
+                            className={({ isActive }) =>
+                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                            }
                         >
                             Porteurs de projet
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link
+                        <NavLink
                             to="/professionnel-independant"
-                            className="hover:text-[var(--color-accent)] transition-all"
+                            className={({ isActive }) =>
+                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                            }
                         >
                             Indépendants
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link
+                        <NavLink
                             to="/entreprise-locale"
-                            className="hover:text-[var(--color-accent)] transition-all"
+                            className={({ isActive }) =>
+                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                            }
                         >
                             Entreprises locales
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
                         <Button
