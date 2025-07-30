@@ -31,12 +31,17 @@ const Hero = ({
             )}
 
             {/* CONTENU */}
-            <div className="relative z-10 container max-w-lg mx-auto px-6 md:py-32 flex flex-col items-center text-center">
+            <div className="
+                relative z-10
+                max-w-5xl
+                md:py-24 mx-4
+                flex flex-col items-center text-center
+            ">
                 <h1 className="text-white text-4xl md:text-6xl font-title leading-tight bg-(--color-dark-blue) rounded-xl px-6 py-8">
                     {highlightWord(title, keyWord)}
                 </h1>
 
-                <p className="mt-4 text-lg md:text-xl font-subtitle text-(--color-slate) bg-(--color-dark-blue)">
+                <p className="max-w-2xl mt-4 text-lg md:text-xl font-subtitle text-(--color-slate) bg-(--color-dark-blue)">
                     {subtitle}
                 </p>
 
