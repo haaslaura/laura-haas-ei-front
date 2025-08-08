@@ -1,42 +1,57 @@
 [
-    {
-        "id": "1",
-        "category": ["starter", "independent", "business"],
-        "title": "Atelier la Bigorne",
-        "cover": "atelier-la-bigorne.webp",
-        "link": "https://nicolaspalmade-coutelier.fr",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
-    },
-    {
-        "id": "2",
-        "category": ["starter", "independent", "business"],
-        "title": "L'Appel d'Être magazine",
-        "cover": "lappel-d-etre.webp",
-        "link": "https://lappel-detre-magazine.com",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
-    },
-    {
-        "id": "3",
-        "category": ["starter", "independent", "business"],
-        "title": "L'Art et la Matière",
-        "cover": "lart-et-la-matiere-cecile-roger.webp",
-        "link": "https://www.lartetlamatiere.org",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis qsdqsdqs dqsdqsd qqsdq sdqsdqs dqsdaq FQ SDFQDSFQSDF CVREZ."
-    },
-    {
-        "id": "4",
-        "category": ["starter", "independent", "business"],
-        "title": "Travaux Béton & Structures",
-        "cover": "travaux-beton-et-structures.webp",
-        "link": "https://tbs67.fr",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
-    },
-    {
-        "id": "5",
-        "category": ["starter", "independent", "business"],
-        "title": "VueZen app",
-        "cover": "vuezenapp.webp",
-        "link": "https://vuezenapp.laura-haas.dev",
-        "text": "Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes de devis."
-    }
+  {
+    "id": "1",
+    "category": ["starter", "independent", "business"],
+    "title": "Atelier La Bigorne",
+    "cover": "atelier-la-bigorne.webp",
+    "link": "https://nicolaspalmade-coutelier.fr",
+    "frontText": "Plongez dans l'univers d'un artisan passionné, entre découverte de l'atelier et boutique en ligne.",
+    "objective": "Offrir une vitrine immersive qui donne envie de pousser la porte de l'atelier, tout en permettant aux visiteurs éloignés de commander facilement en ligne.",
+    "resultat": "Un site qui renforce l'image de marque de Nicolas et attire de nouveaux clients, aussi bien sur le web que lors de salons professionnels.",
+    "tech": ["WordPress", "Fiche d'établissement Google"]
+  },
+  {
+    "id": "2",
+    "category": ["independent"],
+    "title": "L'Appel d'Être Magazine",
+    "cover": "lappel-d-etre.webp",
+    "link": "https://lappel-detre-magazine.com",
+    "frontText": "Un magazine digital qui célèbre le vivant et inspire au quotidien.",
+    "objective": "Créer un site élégant, rapide et facile à gérer pour l'équipe, afin de publier des contenus riches en toute autonomie.",
+    "resultat": "Une plateforme performante qui a permis au magazine de fidéliser sa communauté et de se développer pendant trois ans.",
+    "tech": ["WordPress", "Elementor"]
+  },
+  {
+    "id": "3",
+    "category": ["starter", "independent"],
+    "title": "L'Art et la Matière",
+    "cover": "lart-et-la-matiere-cecile-roger.webp",
+    "link": "https://www.lartetlamatiere.org",
+    "frontText": "Un site chaleureux qui met l'art à la portée de tous.",
+    "objective": "Moderniser un site vieillissant pour refléter l'âme de l'atelier et clarifier son offre.",
+    "resultat": "Une refonte réussie qui a ravivé l'identité visuelle et attiré de nouveaux clients via un meilleur référencement.",
+    "tech": ["WordPress"]
+  },
+  {
+    "id": "4",
+    "category": ["starter", "independent", "business"],
+    "title": "Travaux Béton & Structures",
+    "cover": "travaux-beton-et-structures.webp",
+    "link": "https://tbs67.fr",
+    "frontText": "Un site clair et impactant pour affirmer expertise et savoir-faire.",
+    "objective": "Mettre en valeur une équipe expérimentée et créer une marque employeur forte, même avec une identité toute récente.",
+    "resultat": "Un référencement express — moins d'une semaine — qui a rapidement généré de nouvelles demandes de devis.",
+    "tech": ["WordPress", "Fiche d'établissement Google"]
+  },
+  {
+    "id": "5",
+    "category": ["independent", "business"],
+    "title": "VueZen App",
+    "cover": "vuezenapp.webp",
+    "link": "https://vuezenapp.laura-haas.dev",
+    "frontText": "Une application de méditation pour s'offrir une parenthèse de sérénité.",
+    "objective": "Allier découverte de Vue.js et pratique de Tailwind pour concevoir une application simple et apaisante.",
+    "resultat": "Un projet technique formateur qui a donné naissance à une application en ligne prête à l'emploi.",
+    "tech": ["Vue", "Tailwind"]
+  }
 ]

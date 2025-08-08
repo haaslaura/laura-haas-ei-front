@@ -7,6 +7,7 @@ import TitleAndSubDisplay from '../components/TitleAndSubDisplay';
 import PortfolioSection from '../components/PortfolioSection';
 import portfolioCollection from '../data/portfolioCollection.json';
 
+
 const projectStarterOffers = [
     {
         id: '3',
@@ -59,6 +60,7 @@ const projectStarterOffers = [
         activePopular: false,
     },
 ];
+
 
 const ProjectStarter = () => {
     return (
@@ -152,36 +154,6 @@ const ProjectStarter = () => {
                 )}
             />
 
-            {/* <section className="py-20 md:py-28 bg-light-bg">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold font-title text-center text-dark-space">
-                        Ils ont lancé leur projet avec succès
-                    </h2>
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="rounded-lg overflow-hidden shadow-xl group">
-                            <img src="https://placehold.co/600x400/0A192F/E6EFFF?text=Projet+Artisan" alt="Image du projet pour un artisan" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div className="p-6 bg-dark-space">
-                                <h3 className="font-title text-xl font-bold text-white">Site Vitrine pour Artisan</h3>
-                                <p className="mt-2 text-slate">
-                                    Un site simple et élégant pour présenter son savoir-faire et faciliter les demandes
-                                    de devis.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="rounded-lg overflow-hidden shadow-xl group">
-                            <img src="https://placehold.co/600x400/0A192F/E6EFFF?text=Projet+Coach" alt="Image du projet pour un coach" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div className="p-6 bg-dark-space">
-                                <h3 className="font-title text-xl font-bold text-white">Site pour Coach Indépendant</h3>
-                                <p className="mt-2 text-slate">
-                                    Mise en avant de la personnalité, des offres de coaching et intégration d'un
-                                    calendrier de réservation.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
             {/* <!-- ========= SECTION RÉASSURANCE ========= --> */}
             <Section
                 bgColor="white"
@@ -199,6 +171,7 @@ const ProjectStarter = () => {
                 </Content>
             </Section>
 
+            {/* <!-- ========= CALL TO ACTION ========= --> */}
             <CallToAction
                 title="Lançons votre projet"
                 displayTitle={true}

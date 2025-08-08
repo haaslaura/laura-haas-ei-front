@@ -10,20 +10,20 @@ import { useCardFlip } from '../../hook/useCardFlip';
  *
  * @param {Object} props
  * @param {string} props.title - Titre du projet.
- * @param {string} props.text - Description du projet.
+ * @param {string} props.frontText - Description du projet.
  * @param {string} props.picture - Nom du fichier image à afficher (dans `assets/`).
  * @param {string} props.projectLink - Lien vers le projet (site ou démo).
  *
  * @returns {JSX.Element} Carte visuelle cliquable avec image et texte.
  */
-const PortfolioCard = ({ title, text, picture, projectLink }) => {
+const PortfolioCard = ({ title, frontText, picture, projectLink, objective, resultat, tech }) => {
     const { isFlipped, flipToBack, flipToFront, backBtnRef } = useCardFlip();
 
     return (
         <CardContainer isFlipped={isFlipped}>
             <CardFront
                 title={title}
-                text={text}
+                frontText={frontText}
                 picture={picture}
                 projectLink={projectLink}
                 flipToBack={flipToBack}
@@ -34,6 +34,9 @@ const PortfolioCard = ({ title, text, picture, projectLink }) => {
                 flipToFront={flipToFront}
                 isFlipped={isFlipped}
                 backBtnRef={backBtnRef}
+                objective={objective}
+                resultat={resultat}
+                tech={tech}
             />
         </CardContainer>
     );

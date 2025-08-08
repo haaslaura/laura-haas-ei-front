@@ -1,7 +1,7 @@
 import Button from '../Button';
 import { mediaPathResolver } from '../../services/mediaPathResolver';
 
-const CardFront = ({ title, text, picture, projectLink, flipToBack, isFlipped }) => {
+const CardFront = ({ title, frontText, picture, projectLink, flipToBack, isFlipped }) => {
     const media = mediaPathResolver(picture);
 
     return (
@@ -27,7 +27,7 @@ const CardFront = ({ title, text, picture, projectLink, flipToBack, isFlipped })
 
             {/* TEXTE + BOUTONS */}
             <div className="flex-1 p-6 flex flex-col items-start justify-center gap-6">
-                <p className="text-(--color-slate) whitespace-pre-line">{text}</p>
+                <p className="text-(--color-slate) whitespace-pre-line">{frontText}</p>
                 <div className="flex flex-row gap-6 items-center">
                     <Button
                         text="Voir le site"
