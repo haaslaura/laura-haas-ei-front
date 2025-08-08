@@ -34,7 +34,6 @@ const PortfolioSection = ({ portfolioData }) => {
                             projectLink={project.link}
                         />
                     ))}
-
                 </div>
             </Content>
         </Section>
