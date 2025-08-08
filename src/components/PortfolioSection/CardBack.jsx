@@ -19,13 +19,13 @@ const CardBack = ({ title, flipToFront, isFlipped, backBtnRef, objective, result
             <div className="flex-1 flex flex-col justify-center gap-4 text-sm">
                 <h3 className="text-xl font-title text-center mb-4">{title}</h3>
                 <p className="text-[--color-slate] ">
-                    <TrackChangesIcon fontSize='small' /> <span className="font-bold">Objectif : </span> {objective}
+                    <TrackChangesIcon fontSize="small" /> <span className="font-bold">Objectif : </span> {objective}
                 </p>
                 <p className="text-[--color-slate] ">
-                    <AreaChartIcon fontSize='small' /> <span className="font-bold">Résultat : </span> {resultat}
+                    <AreaChartIcon fontSize="small" /> <span className="font-bold">Résultat : </span> {resultat}
                 </p>
                 <p className="text-left">
-                    <AppShortcutIcon fontSize='small' /> <span className="font-bold">Technologies employées : </span>
+                    <AppShortcutIcon fontSize="small" /> <span className="font-bold">Technologies employées : </span>
                     {tech.join(', ')}
                 </p>
             </div>
