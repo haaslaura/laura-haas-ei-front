@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../components/Button';
+import ContactModal from '../components/ContactModal';
 
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <header className="text-white shadow-md sticky top-0 z-50 bg-[var(--color-dark-blue)]">
@@ -49,10 +51,16 @@ function Header() {
                         </NavLink>
                     </li>
                     <li>
-                        <Button
+                        {/* <Button
                             text="Discutons projet"
                             link="/contact"
-                        />
+                        /> */}
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="bg-[var(--color-accent)] text-[var(--color-dark-blue)] font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
+                        >
+                            Discutons projet
+                        </button>
                     </li>
                 </ul>
 
@@ -121,6 +129,8 @@ function Header() {
                     </ul>
                 </div>
             )}
+
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </header>
     );
 }

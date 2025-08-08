@@ -7,7 +7,6 @@ import TitleAndSubDisplay from '../components/TitleAndSubDisplay';
 import PortfolioSection from '../components/PortfolioSection';
 import portfolioCollection from '../data/portfolioCollection.json';
 
-
 const projectStarterOffers = [
     {
         id: '3',
@@ -60,7 +59,6 @@ const projectStarterOffers = [
         activePopular: false,
     },
 ];
-
 
 const ProjectStarter = () => {
     return (

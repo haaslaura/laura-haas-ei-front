@@ -12,7 +12,6 @@ import PortfolioCard from './PortfolioCard';
  * @returns {JSX.Element} Section contenant les cartes de projets.
  */
 const PortfolioSection = ({ portfolioData }) => {
-    
     return (
         <Section
             bgColor="grey"
