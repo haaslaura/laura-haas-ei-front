@@ -11,7 +11,10 @@ import PortfolioCard from './PortfolioCard';
  *
  * @returns {JSX.Element} Section contenant les cartes de projets.
  */
-const PortfolioSection = ({ portfolioData }) => {
+const PortfolioSection = ({
+    portfolioData,
+    portfolioTitle="Ils se sont lancés avec succès"
+}) => {
     return (
         <Section
             bgColor="grey"
@@ -19,7 +22,7 @@ const PortfolioSection = ({ portfolioData }) => {
         >
             <Content maxW="max-w-lg">
                 <TitleAndSubDisplay
-                    title="Ils se sont lancés avec succès"
+                    title={portfolioTitle}
                     subtitleVisible={false}
                 />
 

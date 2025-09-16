@@ -75,7 +75,6 @@ const ProjectStarter = () => {
             />
 
             {/* ========= SECTION PACKS ========= */}
-            <div id="packs"></div>
             <OffersSection
                 title="Des offres conçues pour démarrer sur des bases solides"
                 subtitle=""
