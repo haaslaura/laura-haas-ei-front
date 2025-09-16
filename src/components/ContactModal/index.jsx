@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { useContactModal } from '../../store/useContactModal';
 
-export default function ContactModal({ isOpen, onClose }) {
+export default function ContactModal() {
+    const { isOpen, close } = useContactModal();
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
 
@@ -15,13 +17,6 @@ export default function ContactModal({ isOpen, onClose }) {
             document.body.style.overflow = '';
         }
     }, [isOpen]);
-
-    // Fermer si clic à l'extérieur
-    const handleClickOutside = (e) => {
-        if (modalRef.current && !modalRef.current.contains(e.target)) {
-            onClose();
-        }
-    };
 
     // Validation email
     const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -57,7 +52,7 @@ export default function ContactModal({ isOpen, onClose }) {
 
         console.log('Formulaire envoyé :', data);
         alert('Votre message a été envoyé !');
-        onClose();
+        close();
     };
 
     if (!isOpen) return null;
@@ -65,21 +60,22 @@ export default function ContactModal({ isOpen, onClose }) {
     return (
         <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-dark-blue)]/80"
-            onClick={handleClickOutside}
+            onClick={close}
             role="dialog"
             aria-modal="true"
         >
             <div
                 ref={modalRef}
-                className="bg-white rounded-lg shadow-lg w-full max-w-lg p-6"
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded-lg shadow-lg w-full max-w-md p-8"
             >
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-xl font-title text-[var(--color-dark-blue)]">Discutons de votre projet</h2>
                     <button
                         ref={closeBtnRef}
-                        onClick={onClose}
-                        className="text-[var(--color-dark-blue)] hover:text-[var(--color-accent)] text-2xl"
+                        onClick={close}
+                        className="text-(--color-dark-blue) hover:text-(--color-accent) text-2xl"
                         aria-label="Fermer la fenêtre de contact"
                     >
                         ✕
@@ -91,51 +87,87 @@ export default function ContactModal({ isOpen, onClose }) {
                     onSubmit={handleSubmit}
                     className="space-y-4"
                 >
-                    <div className="flex gap-4">
-                        <input
-                            type="text"
-                            name="firstname"
-                            placeholder="Prénom"
-                            maxLength="50"
-                            required
-                            className="flex-1 border p-2 rounded focus:outline-[var(--color-accent)]"
-                        />
-                        <input
-                            type="text"
-                            name="lastname"
-                            placeholder="Nom"
-                            maxLength="50"
-                            required
-                            className="flex-1 border p-2 rounded focus:outline-[var(--color-accent)]"
-                        />
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-col gap-2 w-[45%]">
+                            <label
+                                className="text-black"
+                                htmlFor="firstname"
+                            >
+                                Prénom
+                            </label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                id="firstname"
+                                maxLength="50"
+                                required
+                                className="w-full p-2 rounded focus:outline-(--color-accent) bg-gray-200 text-black"
+                            />
+                        </div>
+                        <div className="flex flex-col gap-2 w-[45%]">
+                            <label
+                                className="text-black"
+                                htmlFor="lastname"
+                            >
+                                Nom
+                            </label>
+                            <input
+                                type="text"
+                                name="lastname"
+                                id="lastname"
+                                maxLength="50"
+                                required
+                                className="w-full p-2 rounded focus:outline-(--color-accent) bg-gray-200 text-black"
+                            />
+                        </div>
                     </div>
+
+                    <label
+                        className="text-black"
+                        htmlFor="email"
+                    >
+                        Email
+                    </label>
                     <input
                         type="email"
                         name="email"
-                        placeholder="Email"
                         maxLength="100"
                         required
-                        className="w-full border p-2 rounded focus:outline-[var(--color-accent)]"
+                        className="w-full p-2 rounded focus:outline-(--color-accent) bg-gray-200 text-black"
                     />
+
+                    <label
+                        className="text-black"
+                        htmlFor="phone"
+                    >
+                        Téléphone
+                    </label>
                     <input
                         type="tel"
                         name="phone"
-                        placeholder="Téléphone"
                         maxLength="20"
                         required
-                        className="w-full border p-2 rounded focus:outline-[var(--color-accent)]"
+                        className="w-full p-2 rounded focus:outline-(--color-accent) bg-gray-200 text-black"
                     />
+
+                    <label
+                        className="text-black"
+                        htmlFor="phone"
+                    >
+                        Votre message
+                    </label>
                     <textarea
                         name="message"
-                        placeholder="Parlez de votre projet..."
+                        placeholder="Parlez moi de votre projet..."
                         maxLength="500"
                         required
                         rows="4"
-                        className="w-full border p-2 rounded focus:outline-[var(--color-accent)]"
+                        className="w-full p-2 rounded focus:outline-(--color-accent) bg-gray-200 text-black"
                     ></textarea>
+
                     <button
                         type="submit"
-                        className="w-full bg-[var(--color-accent)] text-[var(--color-dark-blue)] font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
+                        className="w-full bg-[var(--color-accent)] text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
                     >
                         Envoyer
                     </button>

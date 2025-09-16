@@ -1,14 +1,39 @@
 import { Link } from 'react-router-dom';
 import StarsBackground from './StarsBackground';
+import { useContactModal } from '../store/useContactModal';
+
+
+/**
+ * Section Hero principale affichée en haut de la page.
+ *
+ * Affiche un titre avec mise en évidence d'un mot, un sous-titre,
+ * un fond étoilé optionnel, et un bouton d'action qui peut être soit
+ * un lien de navigation (`<Link>`), soit un bouton qui ouvre le modal de contact.
+ *
+ * @component
+ * @param {Object} props - Propriétés du composant.
+ * @param {string} [props.title] - Titre principal (par défaut : phrase marketing).
+ * @param {string} [props.keyWord] - Mot à mettre en évidence dans le titre.
+ * @param {string} [props.subtitle] - Sous-titre ou accroche secondaire.
+ * @param {string} [props.buttonText] - Texte affiché sur le bouton d'action.
+ * @param {boolean} [props.isLink=false] - Détermine si le bouton est un lien (`true`) ou un bouton ouvrant le modal (`false`).
+ * @param {string} [props.buttonLink] - Lien de redirection si `isLinkButton` est `true`.
+ * @param {boolean} [props.starsBg=true] - Active ou désactive le fond étoilé animé.
+ *
+ * @returns {JSX.Element} La section Hero avec contenu et action principale.
+ */
 
 const Hero = ({
     title = 'Un site web sur-mesure qui travaille vraiment pour vous.',
     keyWord = 'vraiment',
     subtitle = 'Partenaire des créateurs, indépendants et TPE pour une présence en ligne claire et efficace.',
     buttonText = 'Échangeons gratuitement sur votre projet',
-    buttonLink = '/contact',
+    isLink = false,
+    buttonLink = '',
     starsBg = true,
 }) => {
+    const { open } = useContactModal();
+
     // Fonction pour mettre en évidence un mot spécifique dans le titre
     const highlightWord = (text, word) => {
         const parts = text.split(word);
@@ -47,14 +72,26 @@ const Hero = ({
                     {subtitle}
                 </p>
 
-                <Link
-                    to={buttonLink}
-                    className="bg-(--color-accent) text-(--color-dark-blue) mt-8
-                    font-bold py-3 px-4 rounded-lg text-lg
-                    hover:scale-105 transform transition-transform whitespace-nowrap cursor-pointer"
-                >
-                    {buttonText}
-                </Link>
+                {/* BOUTON */}
+                {isLink ? (
+                    <Link
+                        to={buttonLink}
+                        className="bg-(--color-accent) text-(--color-dark-blue) mt-8
+                        font-bold py-3 px-4 rounded-lg text-lg
+                        hover:scale-105 transform transition-transform whitespace-nowrap cursor-pointer"
+                    >
+                        {buttonText}
+                    </Link>
+                ) : (
+                    <button
+                        onClick={open}
+                        className="bg-(--color-accent) text-(--color-dark-blue) mt-8
+                        font-bold py-3 px-4 rounded-lg text-lg
+                        hover:scale-105 transform transition-transform whitespace-nowrap cursor-pointer"
+                    >
+                        {buttonText}
+                    </button>
+                )}
             </div>
         </section>
     );

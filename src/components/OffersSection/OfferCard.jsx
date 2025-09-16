@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useContactModal } from '../../store/useContactModal';
 
 const styleOptions = {
     false: {
@@ -34,6 +35,7 @@ const OfferCard = ({
     activePopular = false,
 }) => {
     const styles = styleOptions[activePopular] || styleOptions.false;
+    const { open } = useContactModal();
 
     return (
         <div
@@ -66,18 +68,30 @@ const OfferCard = ({
                     </li>
                 ))}
             </ul>
-            {displayButton && (
-                <Link
-                    to={buttonLink}
-                    className={`
-                        w-full text-center
-                        ${styles.buttonColor} text-gray-800
-                        font-bold py-3 px-6 rounded-lg ${styles.buttonColorHover} transition-all
-                `}
-                >
-                    {buttonText}
-                </Link>
-            )}
+            {displayButton &&
+                (buttonLink === 'modal' ? (
+                    <button
+                        onClick={open}
+                        className={`
+                            w-full text-center
+                            ${styles.buttonColor} text-gray-800
+                            font-bold py-3 px-6 rounded-lg ${styles.buttonColorHover} transition-all
+                    `}
+                    >
+                        {buttonText}
+                    </button>
+                ) : (
+                    <Link
+                        to={buttonLink}
+                        className={`
+                            w-full text-center
+                            ${styles.buttonColor} text-gray-800
+                            font-bold py-3 px-6 rounded-lg ${styles.buttonColorHover} transition-all
+                    `}
+                    >
+                        {buttonText}
+                    </Link>
+                ))}
         </div>
     );
 };

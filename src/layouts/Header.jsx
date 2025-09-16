@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Button from '../components/Button';
-import ContactModal from '../components/ContactModal';
+import { useContactModal } from '../store/useContactModal';
 
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const { open } = useContactModal();
 
     return (
         <header className="text-white shadow-md sticky top-0 z-50 bg-[var(--color-dark-blue)]">
@@ -51,12 +50,9 @@ function Header() {
                         </NavLink>
                     </li>
                     <li>
-                        {/* <Button
-                            text="Discutons projet"
-                            link="/contact"
-                        /> */}
                         <button
-                            onClick={() => setIsModalOpen(true)}
+                            // onClick={() => setIsModalOpen(true)}
+                            onClick={open}
                             className="bg-[var(--color-accent)] text-[var(--color-dark-blue)] font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
                         >
                             Discutons projet
@@ -118,19 +114,16 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                to="/contact"
+                            <button
+                                onClick={open}
                                 className="bg-[var(--color-accent)] text-[var(--color-dark-blue)] py-2 px-4 mt-12 rounded-lg"
                             >
                                 Discutons projet
-                            </Link>
+                            </button>
                         </li>
                     </ul>
                 </div>
             )}
-
-            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </header>
     );
 }

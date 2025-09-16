@@ -2,6 +2,7 @@ import Section from '../../layouts/Section';
 import Content from '../../layouts/Content';
 import TitleAndSubDisplay from '../TitleAndSubDisplay';
 import OfferCard from './OfferCard';
+import { useContactModal } from '../../store/useContactModal';
 
 const homePackOffers = [
     {
@@ -34,7 +35,7 @@ const homePackOffers = [
         ],
         displayButton: true,
         buttonText: 'Demander un devis',
-        buttonLink: '/contact',
+        buttonLink: 'modal',
         activePopular: true,
     },
 ];

@@ -4,6 +4,8 @@ import StageSection from '../components/StageSection';
 import OffersSection from '../components/OffersSection';
 import TestimonialSection from '../components/TestimonialSection';
 import CallToAction from '../components/CallToAction';
+import { useState } from 'react';
+import { useContactModal } from '../store/useContactModal';
 
 const homePackOffers = [
     {
@@ -19,7 +21,7 @@ const homePackOffers = [
         ],
         displayButton: true,
         buttonText: 'Voir les packs',
-        buttonLink: '/contact',
+        buttonLink: 'projet-lancement/#packs',
         activePopular: false,
     },
     {
@@ -36,17 +38,20 @@ const homePackOffers = [
         ],
         displayButton: true,
         buttonText: 'Demander un devis',
-        buttonLink: '/contact',
+        buttonLink: 'modal',
         activePopular: true,
     },
 ];
 
 const Home = () => {
+    const { open } = useContactModal();
+
     return (
         <section className="home">
             <Hero
                 title="Un site web sur-mesure qui travaille vraiment pour vous"
                 keyWord="vraiment"
+                isLink={false}
             />
             <CardSection />
             <StageSection />
@@ -57,8 +62,7 @@ const Home = () => {
                 displayTitle={true}
                 subtitle={'Contactez-moi pour un échange sans engagement. Le café est pour moi (même en visio)\u00A0!'}
                 linkContent="Contactez-moi"
-                link="/contact"
-                displayLinkLikeAButton={true}
+                isLink={false}
                 displaySeparation={true}
             />
             <CallToAction
@@ -66,8 +70,7 @@ const Home = () => {
                 displayTitle={false}
                 subtitle="Je collabore en marque blanche et propose des renforts fiables en développement front-end."
                 linkContent="Contactez-moi"
-                link="/contact"
-                displayLinkLikeAButton={false}
+                isLink={false}
                 displaySeparation={false}
             />
         </section>

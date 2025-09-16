@@ -15,7 +15,7 @@ const contentCardSection = [
         title: 'Vous lancez votre activité\u00A0?',
         content:
             'Créons ensemble un site professionnel pour poser des fondations solides et trouver vos premiers clients.',
-        link: '/tarifs',
+        link: '/projet-lancement',
         linkContent: 'Découvrir les packs de démarrage →',
     },
     {
@@ -23,14 +23,14 @@ const contentCardSection = [
         title: 'Votre site ne vous ressemble plus\u00A0?',
         content:
             'Modernisons votre présence en ligne avec un design qui reflète votre talent et attire les bons clients.',
-        link: '/contact',
+        link: '/professionnel-independant',
         linkContent: 'Faire le point sur votre site →',
     },
     {
         icon: InsightsRoundedIcon,
         title: 'Votre entreprise locale mérite mieux\u00A0?',
         content: 'Gagnez en visibilité et simplifiez vos prises de contact avec un site qui inspire confiance.',
-        link: '/contact',
+        link: '/entreprise-locale',
         linkContent: 'Demander un audit gratuit →',
     },
 ];

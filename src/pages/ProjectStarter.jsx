@@ -68,10 +68,12 @@ const ProjectStarter = () => {
                 keyWord="meilleure"
                 subtitle="Je vous accompagne pour créer un site web professionnel, clair et efficace, sans jargon technique et adapté à votre budget."
                 buttonText="Discutons de votre projet, sans engagement"
+                isLink={false}
                 starsBg={false}
             />
 
             {/* ========= SECTION PACKS ========= */}
+            <div id="packs"></div>
             <OffersSection
                 title="Des offres conçues pour démarrer sur des bases solides"
                 subtitle=""
