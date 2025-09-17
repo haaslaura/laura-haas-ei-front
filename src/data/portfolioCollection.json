@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "category": ["starter", "independent", "business"],
+        "category": ["starter", "independent"],
         "title": "Atelier La Bigorne",
         "cover": "atelier-la-bigorne.webp",
         "link": "https://nicolaspalmade-coutelier.fr",
@@ -53,5 +53,16 @@
         "objective": "Allier découverte de Vue.js et pratique de Tailwind pour concevoir une application simple et apaisante.",
         "resultat": "Un projet technique formateur qui a donné naissance à une application en ligne prête à l'emploi.",
         "tech": ["Vue", "Tailwind"]
+    },
+    {
+        "id": "5",
+        "category": ["business"],
+        "title": "Musée de la nacre et de la tabletterie",
+        "cover": "musee-de-la-nacre.webp",
+        "link": "https://musee-nacre.fr/",
+        "frontText": "Un audit pour une réflexion stratégique et une refonte réussie.",
+        "objective": "Auditer l'ancien site du musée et ses réseaux sociaux pour proposer une nouvelle stratégie digitale.",
+        "resultat": "Un document d'analyse et de recommandations qui a guidé la refonte du site par une agence spécialisée.",
+        "tech": ["/"]
     }
 ]
