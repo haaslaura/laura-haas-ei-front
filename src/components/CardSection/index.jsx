@@ -31,7 +31,7 @@ const contentCardSection = [
         title: 'Votre entreprise locale mérite mieux\u00A0?',
         content: 'Gagnez en visibilité et simplifiez vos prises de contact avec un site qui inspire confiance.',
         link: '/entreprise-locale',
-        linkContent: 'Demander un audit gratuit →',
+        linkContent: 'Demander un audit →',
     },
 ];
 

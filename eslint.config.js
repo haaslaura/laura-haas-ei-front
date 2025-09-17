@@ -29,6 +29,7 @@ export default [
             ...react.configs.recommended.rules,
             ...reactHooks.configs.recommended.rules,
             ...js.configs.recommended.rules,
+            'react/react-in-jsx-scope': 'off',
             'import/order': ['error', { groups: ['builtin', 'external', 'internal'] }],
             'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
         },

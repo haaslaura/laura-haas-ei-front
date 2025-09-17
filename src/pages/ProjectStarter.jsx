@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { useContactModal } from '../store/useContactModal';
 import Hero from '../components/Hero';
 import OffersSection from '../components/OffersSection';
 import CallToAction from '../components/CallToAction';
@@ -6,8 +8,6 @@ import Content from '../layouts/Content';
 import TitleAndSubDisplay from '../components/UI/TitleAndSubDisplay';
 import PortfolioSection from '../components/PortfolioSection';
 import portfolioCollection from '../data/portfolioCollection.json';
-import { Link } from 'react-router-dom';
-import { useContactModal } from '../store/useContactModal';
 
 const projectStarterOffers = [
     {

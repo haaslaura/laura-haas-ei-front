@@ -5,18 +5,55 @@ const ContactModal = () => {
     const { isOpen, close } = useContactModal();
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
+    const openerBtnRef = useRef(null);
 
     // Empêche le scroll du body et gère le focus trap
     useEffect(() => {
+        let lastActiveElement = null;
         if (isOpen) {
             document.body.style.overflow = 'hidden';
+            lastActiveElement = document.activeElement;
             if (closeBtnRef.current) {
                 closeBtnRef.current.focus();
             }
+            // Focus trap + Escape
+            const handleKeyDown = (e) => {
+                if (e.key === 'Tab') {
+                    const focusable = modalRef.current.querySelectorAll(
+                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                    );
+                    const focusableArray = Array.from(focusable).filter(el => !el.disabled && el.offsetParent !== null);
+                    if (focusableArray.length === 0) return;
+                    const first = focusableArray[0];
+                    const last = focusableArray[focusableArray.length - 1];
+                    if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    } else if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    }
+                }
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    close();
+                    // Remet le focus sur le bouton qui a ouvert la modale
+                    setTimeout(() => {
+                        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+                            lastActiveElement.focus();
+                        }
+                    }, 0);
+                }
+            };
+            modalRef.current && modalRef.current.addEventListener('keydown', handleKeyDown);
+            return () => {
+                modalRef.current && modalRef.current.removeEventListener('keydown', handleKeyDown);
+                document.body.style.overflow = '';
+            };
         } else {
             document.body.style.overflow = '';
         }
-    }, [isOpen]);
+    }, [isOpen, close]);
 
     // Validation email
     const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -63,6 +100,7 @@ const ContactModal = () => {
             close();
         } catch (err) {
             alert('Une erreur est survenue, réessayez plus tard.');
+            console.log(err);
         }
     };
 

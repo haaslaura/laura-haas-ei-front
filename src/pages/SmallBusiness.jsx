@@ -48,7 +48,7 @@ const independentProOffers = [
         title: 'Forfait "Tranquillité"',
         subtitle:
             "Pour que votre site reste sécurisé, à jour et performant sans que vous ayez à vous en soucier. Je m'occupe de la technique, vous vous occupez de votre entreprise.",
-        price: 'Sur devis',
+        price: 'À partir de 100€/mois',
         features: [
             'Mises à jour techniques et de sécurité',
             'Sauvegardes régulières du site',

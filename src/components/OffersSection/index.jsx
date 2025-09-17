@@ -2,7 +2,6 @@ import Section from '../../layouts/Section';
 import Content from '../../layouts/Content';
 import TitleAndSubDisplay from '../UI/TitleAndSubDisplay';
 import OfferCard from './OfferCard';
-import { useContactModal } from '../../store/useContactModal';
 
 const homePackOffers = [
     {
