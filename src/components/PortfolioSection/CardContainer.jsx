@@ -3,7 +3,7 @@
 const CardContainer = ({ isFlipped, children }) => {
     return (
         <div
-            className="w-[25rem] h-[26rem] group"
+            className="w-full aspect-[4/3] max-w-full min-h-[20rem] md:min-h-[22rem] xl:min-h-[24rem] group"
             style={{ perspective: '1500px' }}
         >
             <div

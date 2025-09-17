@@ -5,7 +5,7 @@ import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 const CardBack = ({ title, flipToFront, isFlipped, backBtnRef, objective, resultat, tech }) => {
     return (
         <div
-            className="absolute inset-0 rounded-lg overflow-hidden shadow-xl bg-(--color-dark-blue) text-white flex flex-col items-center justify-center p-8"
+            className="absolute inset-0 rounded-lg overflow-hidden shadow-xl bg-(--color-dark-blue) text-white flex flex-col items-center justify-center p-6"
             style={{
                 backfaceVisibility: 'hidden',
                 WebkitBackfaceVisibility: 'hidden',

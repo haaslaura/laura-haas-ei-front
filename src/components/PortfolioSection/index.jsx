@@ -20,13 +20,18 @@ const PortfolioSection = ({
             bgColor="grey"
             paddingY="py-20"
         >
-            <Content maxW="max-w-lg">
+            <Content maxW="max-w-xl">
                 <TitleAndSubDisplay
                     title={portfolioTitle}
                     subtitleVisible={false}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-16">
+                <div className="
+                    grid
+                    grid-cols-1 md:grid-cols-2 xl:grid-cols-3
+                    gap-8 mt-16
+                ">
+
                     {portfolioData.map((project, i) => (
                         <PortfolioCard
                             key={project?.id}
