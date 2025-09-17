@@ -25,7 +25,7 @@ const ToTopButton = () => {
         <button
             onClick={scrollToTop}
             aria-label="Remonter en haut"
-            className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-(--color-accent) text-white shadow-lg hover:bg-(--color-dark-blue) transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2"
+            className="cursor-pointer fixed bottom-6 right-6 z-50 p-3 rounded-full bg-(--color-accent) text-white shadow-lg hover:bg-(--color-dark-blue) transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-accent) focus-visible:ring-offset-2"
         >
             <svg
                 width="28"

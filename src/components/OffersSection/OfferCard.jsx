@@ -45,6 +45,7 @@ const OfferCard = ({
             ${styles.border} ${styles.borderColor}
             p-8 rounded-lg shadow-lg
             md:max-w-xs
+            transition-transform duration-300 ease-out hover:-translate-y-2
         `}
         >
             {activePopular && (
