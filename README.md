@@ -8,7 +8,7 @@ Ce site a pour objectif de :
 
 - Présenter mes offres de manière claire
 - S’adresser à plusieurs profils clients via des pages dédiées
-- Instaurer confiance, pédagogie et crédibilité
+- Instaurer confiance et crédibilité
 
 ## 🔧 Stack technique
 
@@ -29,21 +29,59 @@ npm run dev
 ```bash
 src/
 ├── assets/                         # Images, SVGs, logos, icônes
-├── components/                     # Composants réutilisables (ex: CardSection, Hero, Stage...)
+├── components/
+│   ├── CardSection/
+│   │   ├── index.jsx
+│   │   ├── SimpleCard.jsx
+│   ├── ContactModal/
+│   │   ├── index.jsx
+│   ├── OffersSection/
+│   │   ├── index.jsx
+│   │   ├── OfferCard.jsx
+│   ├── PortfolioSection/
+│   │   ├── index.jsx
+│   │   ├── PortfolioCard.jsx
+│   │   ├── CardFront.jsx
+│   │   ├── CardBack.jsx
+│   │   ├── CardContainer.jsx
+│   ├── StageSection/
+│   │   ├── index.jsx
+│   │   ├── Stage.jsx
+│   ├── TestimonialSection/
+│   │   ├── index.jsx
+│   │   ├── TestimonialCarousel.jsx
+│   ├── UI/
+│   │   ├── ButtonDisplay.jsx
+│   │   ├── LinkDisplayLikeAButton.jsx
+│   │   ├── TitleAndSubDisplay.jsx
+│   │   ├── ToTopButton.jsx
+├── data/
+│   ├── customerTestimonials.json
+│   ├── portfolioCollection.json
+├── hook/
+│   ├── useCardFlip.js
 ├── layouts/
+│   ├── Content.jsx
+│   ├── Footer.jsx
+│   ├── Header.jsx
+│   ├── PageLayout.jsx
+│   ├── Section.jsx
 ├── pages/
-│ ├── Home.jsx
-│ ├── About.jsx
-│ ├── Contact.jsx
-│ ├── ProjectStarter.jsx            # Landing page "Vous lancez votre activité ?"
-│ ├── IndependentPro.jsx            # Landing page "Votre site ne vous ressemble plus ?"
-│ ├── SmallBusiness.jsx             # Landing page "Votre entreprise locale mérite mieux ?"
-│ ├── NotFound.jsx
-│ ├── LegalInfo.jsx
-├── services/                       # Services (futurs appels API, formulaire, email, etc.)
-├── utils/                          # Fonctions utilitaires (ex: formatDate, scrollToTop)
-├── App.jsx                         # Configuration des routes
-├── Index.jsx                       # Point d'entrée principal
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── ProjectStarter.jsx          # Landing page pour les porteurs de projet
+│   ├── IndependentPro.jsx          # Landing page pour les indépendants
+│   ├── SmallBusiness.jsx           # Landing page pour les entreprises locales
+│   ├── NotFound.jsx
+│   ├── LegalInfo.jsx
+├── store/
+│   ├── useContactModal.js
 ├── styles/
-│ ├── index.css                     # Tailwind
+│   ├── index.css
+├── utils/
+│   ├── mediaPathResolver.js
+│   ├── ScrollToTop.jsx
+├── App.jsx                         # Routes
+├── index.jsx
 ```
