@@ -75,7 +75,7 @@ const OfferCard = ({
                         className={`
                             w-full text-center
                             ${styles.buttonColor} text-gray-800
-                            font-bold py-3 px-6 rounded-lg ${styles.buttonColorHover} transition-all
+                            font-bold py-3 px-6 rounded-lg ${styles.buttonColorHover} transition-all cursor-pointer
                     `}
                     >
                         {buttonText}

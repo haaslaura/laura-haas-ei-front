@@ -124,7 +124,7 @@ const ContactModal = () => {
                     <button
                         ref={closeBtnRef}
                         onClick={close}
-                        className="text-(--color-dark-blue) hover:text-(--color-accent) text-2xl"
+                        className="text-(--color-dark-blue) hover:text-(--color-accent) text-2xl cursor-pointer"
                         aria-label="Fermer la fenêtre de contact"
                     >
                         ✕
@@ -216,7 +216,7 @@ const ContactModal = () => {
 
                     <button
                         type="submit"
-                        className="w-full bg-[var(--color-accent)] text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
+                        className="w-full bg-[var(--color-accent)] text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all cursor-pointer"
                     >
                         Envoyer
                     </button>

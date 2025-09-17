@@ -7,7 +7,7 @@ function Header() {
     const { open } = useContactModal();
 
     return (
-        <header className="text-white shadow-md sticky top-0 z-50 bg-[var(--color-dark-blue)]">
+        <header className="text-white shadow-md sticky top-0 z-50 bg-(--color-dark-blue)">
             <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link
@@ -23,7 +23,7 @@ function Header() {
                         <NavLink
                             to="/projet-lancement"
                             className={({ isActive }) =>
-                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                                `hover:text-(--color-accent) transition-all ${isActive ? 'text-(--color-accent)' : ''}`
                             }
                         >
                             Porteurs de projet
@@ -33,7 +33,7 @@ function Header() {
                         <NavLink
                             to="/professionnel-independant"
                             className={({ isActive }) =>
-                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                                `hover:text-(--color-accent) transition-all ${isActive ? 'text-(--color-accent)' : ''}`
                             }
                         >
                             Indépendants
@@ -43,7 +43,7 @@ function Header() {
                         <NavLink
                             to="/entreprise-locale"
                             className={({ isActive }) =>
-                                `hover:text-[var(--color-accent)] transition-all ${isActive ? 'text-[var(--color-accent)]' : ''}`
+                                `hover:text-(--color-accent) transition-all ${isActive ? 'text-(--color-accent)' : ''}`
                             }
                         >
                             Entreprises locales
@@ -51,9 +51,8 @@ function Header() {
                     </li>
                     <li>
                         <button
-                            // onClick={() => setIsModalOpen(true)}
                             onClick={open}
-                            className="bg-[var(--color-accent)] text-[var(--color-dark-blue)] font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
+                            className="cursor-pointer bg-(--color-accent) text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-all"
                         >
                             Discutons projet
                         </button>

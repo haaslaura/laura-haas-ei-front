@@ -33,7 +33,7 @@ const CardBack = ({ title, flipToFront, isFlipped, backBtnRef, objective, result
                 <button
                     ref={backBtnRef}
                     onClick={flipToFront}
-                    className="text-(--color-accent) hover:underline rounded focus:outline-2 focus:outline-offset-3 focus:outline-(--color-accent)"
+                    className="text-(--color-accent) hover:underline rounded focus:outline-2 focus:outline-offset-3 focus:outline-(--color-accent) cursor-pointer"
                     aria-label="Retour au recto de la carte"
                     aria-expanded={isFlipped}
                     tabIndex={!isFlipped ? -1 : 0}

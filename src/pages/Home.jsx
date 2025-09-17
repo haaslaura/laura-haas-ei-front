@@ -20,7 +20,7 @@ const homePackOffers = [
         ],
         displayButton: true,
         buttonText: 'Voir les packs',
-        buttonLink: 'projet-lancement/#packs',
+        buttonLink: '/projet-lancement',
         activePopular: false,
     },
     {

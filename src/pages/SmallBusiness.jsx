@@ -73,7 +73,7 @@ const SmallBusiness = () => {
                 subtitle="Un site professionnel pour inspirer confiance, simplifier vos demandes de devis et attirer plus de clients dans votre secteur."
                 buttonText="Demander un audit"
                 isLink={false}
-                starsBg={false}
+                starsBg={true}
             />
 
             {/* <!-- ========= FONCTIONNEMENT ========= --> */}

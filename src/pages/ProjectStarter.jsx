@@ -73,7 +73,7 @@ const ProjectStarter = () => {
                 subtitle="Je vous accompagne pour créer un site web professionnel, clair et efficace, sans jargon technique et adapté à votre budget."
                 buttonText="Discutons de votre projet, sans engagement"
                 isLink={false}
-                starsBg={false}
+                starsBg={true}
             />
 
             {/* ========= SECTION PACKS ========= */}

@@ -56,7 +56,7 @@ const IndependentPro = () => {
                 subtitle="Ensemble, créons un site qui reflète votre talent, attire vos clients idéaux et travaille pour vous."
                 buttonText="Réserver un créneau pour faire le point"
                 isLink={false}
-                starsBg={false}
+                starsBg={true}
             />
 
             {/* <!-- ========= FONCTIONNEMENT ========= --> */}

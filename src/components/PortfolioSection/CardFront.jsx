@@ -36,7 +36,7 @@ const CardFront = ({ title, frontText, picture, projectLink, flipToBack, isFlipp
                         tabIndex={isFlipped ? -1 : 0}
                     />
                     <button
-                        className="text-(--color-accent) hover:underline rounded focus:outline-2 focus:outline-offset-3 focus:outline-(--color-accent)"
+                        className="cursor-pointer text-(--color-accent) hover:underline rounded focus:outline-2 focus:outline-offset-3 focus:outline-(--color-accent)"
                         onClick={flipToBack}
                         aria-expanded={isFlipped}
                         tabIndex={isFlipped ? -1 : 0}
