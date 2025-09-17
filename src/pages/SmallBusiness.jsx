@@ -1,10 +1,12 @@
+import CallToAction from "../components/CallToAction";
 import Hero from "../components/Hero";
 import OffersSection from "../components/OffersSection";
 import PortfolioSection from "../components/PortfolioSection";
-import TitleAndSubDisplay from "../components/TitleAndSubDisplay";
+import TitleAndSubDisplay from "../components/UI/TitleAndSubDisplay";
 import portfolioCollection from '../data/portfolioCollection.json';
 import Content from "../layouts/Content";
 import Section from "../layouts/Section";
+import { useContactModal } from "../store/useContactModal";
 
 
 const independentProOffers = [
@@ -60,6 +62,9 @@ const independentProOffers = [
 
 
 const SmallBusiness = () => {
+
+    const { open } = useContactModal();
+
     return (
         <>
             <Hero
@@ -140,7 +145,7 @@ const SmallBusiness = () => {
             >
                 <Content maxW="max-w-6xl">
                     <div className="bg-dark-blue text-center text-white p-10 md:p-16 rounded-lg">
-                        <h2 className="text-3xl md:text-4xl font-bold font-title">Prêt à donner un coup de boost à votre image ?</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-title">Prêt à donner un coup de boost à votre image&nbsp;?</h2>
                         <p className="mt-4 max-w-2xl mx-auto text-lg text-light-slate">
                             Au-delà de l'esthétique, votre site doit être un allié pour votre business. Mon objectif : vous livrer un outil{' '}
                             <strong className="text-accent">efficace, qui convertit vos visiteurs en clients</strong> et vous libère du temps pour vous concentrer sur votre cœur de métier.
@@ -148,6 +153,24 @@ const SmallBusiness = () => {
                     </div>
                 </Content>
             </Section>
+
+            {/* <!-- ========= CALL TO ACTION ========= --> */}
+            <CallToAction
+                title={
+                    <>Trouvons le meilleur moyen<br />
+                    de vous faire connaître
+                    </>
+                }
+                displayTitle={true}
+                subtitle="Prêt à passer à l'action ?"
+                displaySeparation={false}
+
+                isButton={true}
+                isLinkAppearance={false}
+                linkText= 'Prenons contact'
+
+                buttonAction={open}
+            />
         </>
     );
 };

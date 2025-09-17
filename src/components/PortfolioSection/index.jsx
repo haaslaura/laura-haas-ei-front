@@ -1,4 +1,4 @@
-import TitleAndSubDisplay from '../TitleAndSubDisplay';
+import TitleAndSubDisplay from '../UI/TitleAndSubDisplay';
 import Section from '../../layouts/Section';
 import Content from '../../layouts/Content';
 import PortfolioCard from './PortfolioCard';

@@ -2,7 +2,7 @@ import Section from '../../layouts/Section';
 import testimonials from '../../data/customerTestimonials.json';
 import TestimonialCarousel from './TestimonialCarousel';
 import Content from '../../layouts/Content';
-import TitleAndSubDisplay from '../TitleAndSubDisplay';
+import TitleAndSubDisplay from '../UI/TitleAndSubDisplay';
 
 const TestimonialSection = () => {
     return (

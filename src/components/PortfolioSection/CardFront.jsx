@@ -1,4 +1,4 @@
-import Button from '../Button';
+import LinkDisplayLikeAButton from '../UI/LinkDisplayLikeAButton';
 import { mediaPathResolver } from '../../services/mediaPathResolver';
 
 const CardFront = ({ title, frontText, picture, projectLink, flipToBack, isFlipped }) => {
@@ -29,7 +29,7 @@ const CardFront = ({ title, frontText, picture, projectLink, flipToBack, isFlipp
             <div className="flex-1 p-6 flex flex-col items-start justify-center gap-6">
                 <p className="text-(--color-slate) whitespace-pre-line">{frontText}</p>
                 <div className="flex flex-row gap-6 items-center">
-                    <Button
+                    <LinkDisplayLikeAButton
                         text="Voir le site"
                         link={projectLink}
                         blank={true}

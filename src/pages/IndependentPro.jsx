@@ -1,10 +1,12 @@
+import CallToAction from "../components/CallToAction";
 import Hero from "../components/Hero"
 import OffersSection from "../components/OffersSection";
 import PortfolioSection from "../components/PortfolioSection";
-import TitleAndSubDisplay from "../components/TitleAndSubDisplay";
+import TitleAndSubDisplay from "../components/UI/TitleAndSubDisplay";
 import portfolioCollection from '../data/portfolioCollection.json';
 import Content from "../layouts/Content";
 import Section from "../layouts/Section";
+import { useContactModal } from "../store/useContactModal";
 
 
 const independentProOffers = [
@@ -44,6 +46,9 @@ const independentProOffers = [
 
 
 const IndependentPro = () => {
+
+    const { open } = useContactModal();
+
     return (
         <>
             <Hero
@@ -134,6 +139,20 @@ const IndependentPro = () => {
                     </div>
                 </Content>
             </Section>
+
+            {/* <!-- ========= CALL TO ACTION ========= --> */}
+            <CallToAction
+                title="Travaillons ensemble à votre réussite"
+                displayTitle={true}
+                subtitle="Prêt à passer à l'action ?"
+                displaySeparation={false}
+
+                isButton={true}
+                isLinkAppearance={false}
+                linkText= 'Prenons contact'
+
+                buttonAction={open}
+            />
         </>
     );
 };

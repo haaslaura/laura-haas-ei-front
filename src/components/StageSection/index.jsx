@@ -1,7 +1,7 @@
 import Content from '../../layouts/Content';
 import Section from '../../layouts/Section';
 import Stage from './Stage';
-import TitleAndSubDisplay from '../TitleAndSubDisplay';
+import TitleAndSubDisplay from '../UI/TitleAndSubDisplay';
 
 const contentStageSection = [
     {

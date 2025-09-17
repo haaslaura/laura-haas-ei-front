@@ -4,7 +4,6 @@ import StageSection from '../components/StageSection';
 import OffersSection from '../components/OffersSection';
 import TestimonialSection from '../components/TestimonialSection';
 import CallToAction from '../components/CallToAction';
-import { useState } from 'react';
 import { useContactModal } from '../store/useContactModal';
 
 const homePackOffers = [
@@ -44,6 +43,7 @@ const homePackOffers = [
 ];
 
 const Home = () => {
+
     const { open } = useContactModal();
 
     return (
@@ -53,25 +53,38 @@ const Home = () => {
                 keyWord="vraiment"
                 isLink={false}
             />
+            
             <CardSection />
+            
             <StageSection />
+            
             <OffersSection offers={homePackOffers} />
+            
             <TestimonialSection />
+
             <CallToAction
                 title={'Prêt à donner vie à votre projet\u00A0?'}
                 displayTitle={true}
                 subtitle={'Contactez-moi pour un échange sans engagement. Le café est pour moi (même en visio)\u00A0!'}
-                linkContent="Contactez-moi"
-                isLink={false}
                 displaySeparation={true}
+
+                isButton={true}
+                isLinkAppearance={false}
+                linkText= 'Contactez-moi'
+
+                buttonAction={open}
             />
             <CallToAction
                 title={'Vous êtes une agence\u00A0?'}
                 displayTitle={false}
                 subtitle="Je collabore en marque blanche et propose des renforts fiables en développement front-end."
-                linkContent="Contactez-moi"
-                isLink={false}
                 displaySeparation={false}
+
+                isButton={true}
+                isLinkAppearance={true}
+                linkText= 'Échangeons à ce sujet'
+
+                buttonAction={open}               
             />
         </section>
     );

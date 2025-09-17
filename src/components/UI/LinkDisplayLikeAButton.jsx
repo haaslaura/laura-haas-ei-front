@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Button = ({ text, tabIndex = 0, link, blank = false }) => {
+const LinkDisplayLikeAButton = ({ text, tabIndex = 0, link, blank = false }) => {
     const linkProps = blank ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
     return (
@@ -15,4 +15,4 @@ const Button = ({ text, tabIndex = 0, link, blank = false }) => {
     );
 };
 
-export default Button;
+export default LinkDisplayLikeAButton;
