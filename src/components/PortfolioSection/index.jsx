@@ -11,10 +11,7 @@ import PortfolioCard from './PortfolioCard';
  *
  * @returns {JSX.Element} Section contenant les cartes de projets.
  */
-const PortfolioSection = ({
-    portfolioData,
-    portfolioTitle="Ils se sont lancés avec succès"
-}) => {
+const PortfolioSection = ({ portfolioData, portfolioTitle = 'Ils se sont lancés avec succès' }) => {
     return (
         <Section
             bgColor="grey"
@@ -26,12 +23,13 @@ const PortfolioSection = ({
                     subtitleVisible={false}
                 />
 
-                <div className="
+                <div
+                    className="
                     grid
                     grid-cols-1 md:grid-cols-2 xl:grid-cols-3
                     gap-8 mt-16
-                ">
-
+                "
+                >
                     {portfolioData.map((project, i) => (
                         <PortfolioCard
                             key={project?.id}

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import StarsBackground from './StarsBackground';
 import { useContactModal } from '../store/useContactModal';
 
-
 /**
  * Section Hero principale affichée en haut de la page.
  *

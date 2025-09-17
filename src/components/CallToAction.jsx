@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import LinkDisplayLikeAButton from './UI/LinkDisplayLikeAButton';
 import ButtonDisplay from './UI/ButtonDisplay';
 
-
 /**
  * Composant CallToAction (CTA).
  *
@@ -31,22 +30,22 @@ const CallToAction = ({
     displayTitle = 'true',
     subtitle = 'Contactez-moi pour un échange sans engagement',
     displaySeparation = 'true',
-    
+
     isButton = true,
     isLinkAppearance = false,
     linkText = 'Contactez-moi',
-    
+
     buttonAction = null,
-    
+
     url = '',
     blank = false,
 }) => {
-
     return (
         <section className="bg-[var(--color-dark-blue)] text-white flex flex-col items-center">
             <div
                 className={
-                    'cta-lh-container max-w-md mx-4 py-16 text-center ' + (displaySeparation ? 'border-b border-gray-700' : '')
+                    'cta-lh-container max-w-md mx-4 py-16 text-center ' +
+                    (displaySeparation ? 'border-b border-gray-700' : '')
                 }
             >
                 {/* Display CtA title */}
@@ -61,28 +60,32 @@ const CallToAction = ({
                 {/* Display a button for an action */}
                 {/* Or display a link for the navigation */}
                 {isButton ? (
-
                     isLinkAppearance ? (
-                        <button onClick={buttonAction} className='underline underline-offset-2 text-accent font-semibold'>{linkText}</button>
-                    
+                        <button
+                            onClick={buttonAction}
+                            className="underline underline-offset-2 text-accent font-semibold"
+                        >
+                            {linkText}
+                        </button>
                     ) : (
                         <ButtonDisplay
                             text={linkText}
                             buttonAction={buttonAction}
                         />
                     )
+                ) : isLinkAppearance ? (
+                    <Link
+                        to={url}
+                        blank={blank}
+                    >
+                        {linkText}
+                    </Link>
                 ) : (
-
-                    isLinkAppearance ? (
-                        <Link to={url} blank={blank}>{linkText}</Link>
-
-                    ) : (
-                        <LinkDisplayLikeAButton
-                            text={linkText}
-                            link={url}
-                            blank={blank}
-                        />
-                    )
+                    <LinkDisplayLikeAButton
+                        text={linkText}
+                        link={url}
+                        blank={blank}
+                    />
                 )}
             </div>
         </section>

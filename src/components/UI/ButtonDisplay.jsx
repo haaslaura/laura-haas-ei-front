@@ -1,5 +1,4 @@
 const ButtonDisplay = ({ text, buttonAction }) => {
-
     return (
         <button
             onClick={buttonAction}

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useContactModal } from '../../store/useContactModal';
 
-export default function ContactModal() {
+const ContactModal = () => {
     const { isOpen, close } = useContactModal();
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
@@ -25,7 +25,7 @@ export default function ContactModal() {
     const isValidPhone = (phone) => /^[0-9\s+()-]{10,15}$/.test(phone);
 
     // Gestion du submit
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
 
@@ -50,9 +50,20 @@ export default function ContactModal() {
             return;
         }
 
-        console.log('Formulaire envoyé :', data);
-        alert('Votre message a été envoyé !');
-        close();
+        // sending data form
+        try {
+            const response = await fetch(import.meta.env.VITE_API_MAIL_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) throw new Error('Erreur serveur');
+            alert('Votre message a été envoyé !');
+            close();
+        } catch (err) {
+            alert('Une erreur est survenue, réessayez plus tard.');
+        }
     };
 
     if (!isOpen) return null;
@@ -175,4 +186,6 @@ export default function ContactModal() {
             </div>
         </div>
     );
-}
+};
+
+export default ContactModal;

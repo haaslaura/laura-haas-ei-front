@@ -43,7 +43,6 @@ const homePackOffers = [
 ];
 
 const Home = () => {
-
     const { open } = useContactModal();
 
     return (
@@ -53,13 +52,13 @@ const Home = () => {
                 keyWord="vraiment"
                 isLink={false}
             />
-            
+
             <CardSection />
-            
+
             <StageSection />
-            
+
             <OffersSection offers={homePackOffers} />
-            
+
             <TestimonialSection />
 
             <CallToAction
@@ -67,11 +66,9 @@ const Home = () => {
                 displayTitle={true}
                 subtitle={'Contactez-moi pour un échange sans engagement. Le café est pour moi (même en visio)\u00A0!'}
                 displaySeparation={true}
-
                 isButton={true}
                 isLinkAppearance={false}
-                linkText= 'Contactez-moi'
-
+                linkText="Contactez-moi"
                 buttonAction={open}
             />
             <CallToAction
@@ -79,12 +76,10 @@ const Home = () => {
                 displayTitle={false}
                 subtitle="Je collabore en marque blanche et propose des renforts fiables en développement front-end."
                 displaySeparation={false}
-
                 isButton={true}
                 isLinkAppearance={true}
-                linkText= 'Échangeons à ce sujet'
-
-                buttonAction={open}               
+                linkText="Échangeons à ce sujet"
+                buttonAction={open}
             />
         </section>
     );

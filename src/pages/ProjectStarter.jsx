@@ -9,7 +9,6 @@ import portfolioCollection from '../data/portfolioCollection.json';
 import { Link } from 'react-router-dom';
 import { useContactModal } from '../store/useContactModal';
 
-
 const projectStarterOffers = [
     {
         id: '3',
@@ -64,7 +63,6 @@ const projectStarterOffers = [
 ];
 
 const ProjectStarter = () => {
-
     const { open } = useContactModal();
 
     return (
@@ -182,11 +180,9 @@ const ProjectStarter = () => {
                 displayTitle={true}
                 subtitle="Prêt à passer à l'action ?"
                 displaySeparation={false}
-
                 isButton={true}
                 isLinkAppearance={false}
-                linkText= 'Prenons contact'
-
+                linkText="Prenons contact"
                 buttonAction={open}
             />
         </>
