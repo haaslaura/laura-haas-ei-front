@@ -1,5 +1,5 @@
 import LinkDisplayLikeAButton from '../UI/LinkDisplayLikeAButton';
-import { mediaPathResolver } from '../../services/mediaPathResolver';
+import { mediaPathResolver } from '../../utils/mediaPathResolver';
 
 const CardFront = ({ title, frontText, picture, projectLink, flipToBack, isFlipped }) => {
     const media = mediaPathResolver(picture);

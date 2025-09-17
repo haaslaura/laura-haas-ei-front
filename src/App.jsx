@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import ContactModal from './components/ContactModal';
 
 // Layouts
 import PageLayout from './layouts/PageLayout';
@@ -12,10 +11,18 @@ import SmallBusiness from './pages/SmallBusiness';           // Pour les TPE / P
 import NotFound from './pages/NotFound';                     // Page 404
 import LegalInfo from './pages/LegalInfo';
 
+// Others
+import ContactModal from './components/ContactModal';
+import ScrollToTop from './utils/ScrollToTop';
+import ToTopButton from './components/UI/ToTopButton';
+
 function App() {
+
   return (
     <>
       <ContactModal />
+      <ScrollToTop />
+      <ToTopButton />
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
