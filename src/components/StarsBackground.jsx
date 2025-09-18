@@ -11,9 +11,6 @@ import { useEffect, useRef } from 'react';
  * - continuous animation via `requestAnimationFrame`.
  * - cleaning the listeners and the animation on dismantling
  *
- * Notes :
- * - Le composant n'accepte pas de props pour l'instant ; il peut être
- *   étendu pour contrôler la densité, les couleurs ou la vitesse.
  */
 function StarsBackground() {
     const canvasRef = useRef(null);
