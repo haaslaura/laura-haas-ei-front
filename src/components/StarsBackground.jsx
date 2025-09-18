@@ -1,5 +1,20 @@
 import { useEffect, useRef } from 'react';
 
+/**
+ * StarsBackground
+ * ----------------
+ * React component that renders an animated `<canvas>` displaying a starry sky.
+ * The stars are generated as a function of the canvas surface, each with a random size, flash rate and offset.
+ *
+ * The component manages :
+ * - resizing the canvas to the window's resize
+ * - continuous animation via `requestAnimationFrame`.
+ * - cleaning the listeners and the animation on dismantling
+ *
+ * Notes :
+ * - Le composant n'accepte pas de props pour l'instant ; il peut être
+ *   étendu pour contrôler la densité, les couleurs ou la vitesse.
+ */
 function StarsBackground() {
     const canvasRef = useRef(null);
 
