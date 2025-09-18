@@ -43,6 +43,9 @@ function StarsBackground() {
                     size: Math.random() * 2 + 0.5,
                     blinkSpeed: Math.random() * 0.05 + 0.01,
                     blinkOffset: Math.random() * Math.PI * 2,
+                    // slow drift velocity for subtle background movement
+                    vx: (Math.random() - 0.5) * 0.06,
+                    vy: (Math.random() - 0.5) * 0.02,
                 });
             }
         };
@@ -52,6 +55,15 @@ function StarsBackground() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             stars.forEach((star) => {
+                // Update position slowly (drift)
+                star.x += star.vx;
+                star.y += star.vy;
+                // Wrap-around when exiting viewport
+                if (star.x < 0) star.x += canvas.width;
+                if (star.x > canvas.width) star.x -= canvas.width;
+                if (star.y < 0) star.y += canvas.height;
+                if (star.y > canvas.height) star.y -= canvas.height;
+
                 // Calculate blinking effect
                 const brightness = 0.5 + 0.5 * Math.sin(time * star.blinkSpeed + star.blinkOffset);
 
