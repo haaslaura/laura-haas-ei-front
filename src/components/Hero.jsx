@@ -47,6 +47,7 @@ const Hero = ({
 
     return (
         <section className="relative h-[90vh] flex flex-col items-center justify-center bg-(--color-dark-blue) text-white">
+
             {/* FOND ÉTOILÉ */}
             {starsBg && (
                 <div className="absolute z-0">
@@ -57,9 +58,8 @@ const Hero = ({
             {/* CONTENU */}
             <div
                 className="
-                relative z-10
-                max-w-5xl
-                md:py-24 mx-4
+                relative z-10 mx-4
+                max-w-screen md:max-w-5xl
                 flex flex-col items-center text-center
             "
             >
@@ -67,7 +67,7 @@ const Hero = ({
                     {highlightWord(title, keyWord)}
                 </h1>
 
-                <p className="max-w-2xl mt-4 text-lg md:text-xl font-subtitle text-(--color-slate) bg-(--color-dark-blue)">
+                <p className="max-w-2xl mt-4 px-4 text-lg md:text-xl font-subtitle text-(--color-slate) bg-(--color-dark-blue)">
                     {subtitle}
                 </p>
 
@@ -77,7 +77,7 @@ const Hero = ({
                         to={buttonLink}
                         className="bg-(--color-accent) text-(--color-dark-blue) mt-8
                         font-bold py-3 px-4 rounded-lg text-lg
-                        hover:scale-105 transform transition-transform whitespace-nowrap cursor-pointer"
+                        hover:scale-105 transform transition-transform cursor-pointer"
                     >
                         {buttonText}
                     </Link>
@@ -86,7 +86,7 @@ const Hero = ({
                         onClick={open}
                         className="bg-(--color-accent) text-(--color-dark-blue) mt-8
                         font-bold py-3 px-4 rounded-lg text-lg
-                        hover:scale-105 transform transition-transform whitespace-nowrap cursor-pointer"
+                        hover:scale-105 transform transition-transform cursor-pointer"
                     >
                         {buttonText}
                     </button>
