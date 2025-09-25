@@ -120,16 +120,14 @@ function Header() {
                     </li>
                     <li>
                         <button
-                            onClick={open}
-                            className="bg-(--color-accent) text-(--color-dark-blue) py-2 px-4 mt-12 rounded-lg"
-                            // onClick={(e) => {
-                            //     // transmet l'élément ouvreur à la modale via un CustomEvent
-                            //     window.dispatchEvent(new CustomEvent('contactOpener', { detail: e.currentTarget }));
-                            //     open();
-                            // }}
-                            // className="cursor-pointer bg-(--color-accent) text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-transform"
+                            onClick={(e) => {
+                                // transmet l'élément ouvreur à la modale via un CustomEvent
+                                window.dispatchEvent(new CustomEvent('contactOpener', { detail: e.currentTarget }));
+                                open();
+                            }}
+                            className="cursor-pointer bg-(--color-accent) text-(--color-dark-blue) font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-transform"
                         >
-                            Discutons projet
+                            Discutons de votre projet
                         </button>
                     </li>
                 </ul>
