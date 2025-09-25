@@ -53,17 +53,22 @@ const CardSection = () => {
                         // Animation en cascade
                         const timeouts = [];
                         contentCardSection.forEach((_, i) => {
-                            timeouts.push(setTimeout(() => {
-                                setShowCards((prev) => {
-                                    const next = [...prev];
-                                    next[i] = true;
-                                    return next;
-                                });
-                            }, 200 + i * 200));
+                            timeouts.push(
+                                setTimeout(
+                                    () => {
+                                        setShowCards((prev) => {
+                                            const next = [...prev];
+                                            next[i] = true;
+                                            return next;
+                                        });
+                                    },
+                                    200 + i * 200,
+                                ),
+                            );
                         });
                     }
                 },
-                { threshold: 0.3 }
+                { threshold: 0.3 },
             );
             observer.observe(sectionRef.current);
         }
@@ -75,18 +80,22 @@ const CardSection = () => {
             bgColor="grey"
             paddingY="py-26"
         >
-            <Content maxW="max-w-5xl" >
+            <Content maxW="max-w-5xl">
                 <TitleAndSubDisplay
                     title="Quel est votre projet ?"
                     subtitle=""
                 />
 
-                <div className="grid md:grid-cols-3 justify-center gap-8 mt-14" ref={sectionRef}>
+                <div
+                    className="grid md:grid-cols-3 justify-center gap-8 mt-14"
+                    ref={sectionRef}
+                >
                     {contentCardSection.map((card, i) => (
                         <div
                             key={card.title}
                             style={{
-                                transition: 'opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1)',
+                                transition:
+                                    'opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1)',
                                 opacity: showCards[i] ? 1 : 0,
                                 transform: showCards[i] ? 'translateY(0)' : 'translateY(40px)',
                             }}

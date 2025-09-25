@@ -47,7 +47,6 @@ const Hero = ({
 
     return (
         <section className="relative h-[90vh] flex flex-col items-center justify-center bg-(--color-dark-blue) text-white">
-
             {/* FOND ÉTOILÉ */}
             {starsBg && (
                 <div className="absolute z-0">

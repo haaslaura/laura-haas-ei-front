@@ -6,23 +6,35 @@ const ContactModal = () => {
     const modalRef = useRef(null);
     const closeBtnRef = useRef(null);
     const openerBtnRef = useRef(null);
+    const prevFocusedRef = useRef(null); // mémorise l'élément à restaurer
 
-    // Empêche le scroll du body et gère le focus trap
+    // Écoute quel élément a ouvert la fenêtre modale (pour rétablir le focus)
     useEffect(() => {
-        let lastActiveElement = null;
+        const handler = (e) => {
+            openerBtnRef.current = e.detail || null;
+        };
+        window.addEventListener('contactOpener', handler);
+        return () => window.removeEventListener('contactOpener', handler);
+    }, []);
+
+    // Empêche le scroll du body + gère le focus trap + restaure le focus
+    useEffect(() => {
         if (isOpen) {
+            // mémoriser l'élément à restaurer : priorité à l'élément envoyé via event, sinon élément actif
+            prevFocusedRef.current = openerBtnRef.current ?? document.activeElement;
             document.body.style.overflow = 'hidden';
-            lastActiveElement = document.activeElement;
             if (closeBtnRef.current) {
                 closeBtnRef.current.focus();
             }
-            // Focus trap + Escape
             const handleKeyDown = (e) => {
                 if (e.key === 'Tab') {
+                    if (!modalRef.current) return;
                     const focusable = modalRef.current.querySelectorAll(
-                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
                     );
-                    const focusableArray = Array.from(focusable).filter(el => !el.disabled && el.offsetParent !== null);
+                    const focusableArray = Array.from(focusable).filter(
+                        (el) => !el.disabled && el.offsetParent !== null,
+                    );
                     if (focusableArray.length === 0) return;
                     const first = focusableArray[0];
                     const last = focusableArray[focusableArray.length - 1];
@@ -37,21 +49,27 @@ const ContactModal = () => {
                 if (e.key === 'Escape') {
                     e.preventDefault();
                     close();
-                    // Remet le focus sur le bouton qui a ouvert la modale
+                    // restaurer le focus sur l'ouvreur (openerBtnRef) si présent, sinon sur prevFocusedRef
                     setTimeout(() => {
-                        if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
-                            lastActiveElement.focus();
-                        }
+                        const toFocus = openerBtnRef.current ?? prevFocusedRef.current;
+                        if (toFocus && typeof toFocus.focus === 'function') toFocus.focus();
                     }, 0);
                 }
             };
-            modalRef.current && modalRef.current.addEventListener('keydown', handleKeyDown);
+
+            // écoute sur document pour capter Escape même si le focus n'est pas sur le conteneur
+            document.addEventListener('keydown', handleKeyDown);
             return () => {
-                modalRef.current && modalRef.current.removeEventListener('keydown', handleKeyDown);
+                document.removeEventListener('keydown', handleKeyDown);
                 document.body.style.overflow = '';
             };
         } else {
             document.body.style.overflow = '';
+            // Au moment de la fermeture normale, restaurer le focus
+            const toFocus = openerBtnRef.current ?? prevFocusedRef.current;
+            if (toFocus && typeof toFocus.focus === 'function') {
+                setTimeout(() => toFocus.focus(), 0);
+            }
         }
     }, [isOpen, close]);
 
@@ -108,7 +126,7 @@ const ContactModal = () => {
 
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-dark-blue)]/80"
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-(--color-dark-blue)/80"
             onClick={close}
             role="dialog"
             aria-modal="true"
@@ -116,11 +134,11 @@ const ContactModal = () => {
             <div
                 ref={modalRef}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-lg shadow-lg w-full max-w-md p-8"
+                className="bg-white rounded-lg shadow-lg w-full max-w-[calc(100%-4rem)] md:max-w-2xl p-4 md:p-8"
             >
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-xl font-title text-[var(--color-dark-blue)]">Discutons de votre projet</h2>
+                    <h2 className="text-xl font-title text-(--color-dark-blue)">Discutons de votre projet</h2>
                     <button
                         ref={closeBtnRef}
                         onClick={close}
@@ -201,7 +219,7 @@ const ContactModal = () => {
 
                     <label
                         className="text-black"
-                        htmlFor="phone"
+                        htmlFor="message"
                     >
                         Votre message
                     </label>
