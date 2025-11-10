@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -7,21 +9,21 @@ export default function Footer() {
                 <p>&copy; {currentYear} Laura Haas. Tous droits réservés.</p>
                 <p className="text-sm mt-2">Fait avec ♥ à Strasbourg, France.</p>
                 <div className="mt-4 flex items-center justify-center space-x-4">
-                    <a
-                        href="https://www.linkedin.com/in/laurahaas-developpement/"
+                    <Link
+                        to="https://www.linkedin.com/in/laurahaas-developpement/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] transition-colors"
                     >
                         LinkedIn
-                    </a>
+                    </Link>
                     <span className="text-[var(--color-slate)]">|</span>
-                    <a
-                        href="/mentions-legales"
+                    <Link
+                        to="/mentions-legales"
                         className="hover:text-[var(--color-accent)] focus:text-[var(--color-accent)] transition-colors"
                     >
                         Mentions Légales
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>

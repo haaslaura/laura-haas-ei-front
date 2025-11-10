@@ -10,11 +10,13 @@ import IndependentPro from './pages/IndependentPro';         // Pour les indépe
 import SmallBusiness from './pages/SmallBusiness';           // Pour les TPE / PME
 import NotFound from './pages/NotFound';                     // Page 404
 import LegalInfo from './pages/LegalInfo';
+import WebAgency from './pages/WebAgency';                  // Pour les agences web
 
 // Others
 import ContactModal from './components/ContactModal';
 import ScrollToTop from './utils/ScrollToTop';
 import ToTopButton from './components/UI/ToTopButton';
+
 
 function App() {
 
@@ -30,6 +32,7 @@ function App() {
           <Route path="/professionnel-independant" element={<IndependentPro />} />
           <Route path="/entreprise-locale" element={<SmallBusiness />} />
           <Route path="/mentions-legales" element={<LegalInfo />} />
+          <Route path="/agence-web" element={<WebAgency />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

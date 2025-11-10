@@ -120,12 +120,12 @@ const ProjectStarter = () => {
                                 <strong className="text-slate">En option (sur devis) :</strong> création d'arborescence,
                                 wireframes simples, rédaction de brief technique/créatif.
                             </p>
-                            <Link
-                                href="#"
+                            {/* <Link
+                                to="#"
                                 className="mt-6 inline-block font-bold text-(--color-dark-blue) hover:underline"
                             >
                                 Me contacter pour un cadrage →
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="bg-light-bg p-8 rounded-lg max-w-xs">
                             <h3 className="font-title text-2xl font-bold text-accent">
@@ -139,12 +139,12 @@ const ProjectStarter = () => {
                             <p className="mt-4 text-sm text-[#687087]">
                                 Accompagnement ponctuel ou régulier, selon les projets réalisés ensemble.
                             </p>
-                            <Link
-                                href="#"
+                            {/* <Link
+                                to="#"
                                 className="mt-6 inline-block font-bold text-(--color-dark-blue) hover:underline"
                             >
                                 Discuter de la maintenance →
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </Content>
