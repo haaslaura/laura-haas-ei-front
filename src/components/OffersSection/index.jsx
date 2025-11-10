@@ -60,6 +60,18 @@ const styleNoteBlock = {
     },
 };
 
+
+/**
+ * Section des offres
+ * 
+ * @param {string} props.title - Titre de la section.
+ * @param {string} props.subtitle - Sous-titre de la section.
+ * @param {boolean} [props.visibleNoteContent=true] - Affiche ou non le bloc de note en bas de section.
+ * @param {string} [props.noteStyle='simple'] - Style du bloc de note ('simple' ou 'advanced').
+ * @param {string} [props.noteContent] - Contenu du bloc de note.
+ * @param {Array} props.offers - Liste des offres à afficher. 
+ * @returns {JSX.Element} Composant OffersSection.
+ */
 const OffersSection = ({
     title = 'Des offres claires et transparentes',
     subtitle = 'Pas de surprise, vous savez où vous allez.',

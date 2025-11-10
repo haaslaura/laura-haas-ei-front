@@ -2,24 +2,35 @@ import CallToAction from '../components/CallToAction';
 import Hero from '../components/Hero';
 import OffersSection from '../components/OffersSection';
 import PortfolioSection from '../components/PortfolioSection';
+import IconWithHoverEffect from '../components/UI/iconDisplay/IconWithHoverEffect';
+import TooltipBubble from '../components/UI/TooltipBubble';
 import TitleAndSubDisplay from '../components/UI/TitleAndSubDisplay';
 import portfolioCollection from '../data/portfolioCollection.json';
 import Content from '../layouts/Content';
 import Section from '../layouts/Section';
 import { useContactModal } from '../store/useContactModal';
 
-const independentProOffers = [
+/**
+ * TODO :
+ * - Ajout d'un double CTA : voir mon profil LinkedIn
+ * - Portfolio spécial Agence
+ * - Corriger la section Services
+ * - Intégrer les langages de programmation / CMS / techno
+ * - Regarder les pages partenaires des agences
+ */
+
+
+const agenciesOffers = [
     {
         id: '1',
-        title: 'Site Vitrine "Clé en Main"',
+        title: 'Intégration Front-End',
         subtitle:
-            'La solution complète pour présenter votre entreprise, vos services et vos réalisations de manière professionnelle.',
-        price: 'à partir de 1500€',
+            'Intégration HTML/CSS/JS (Tailwind, etc.) à partir de vos maquettes Figma. Responsive, pixel-perfect et optimisé.',
+        // price: 'à partir de 1500€',
         features: [
-            'Présentation claire de vos services',
-            'Galerie de photos de vos chantiers/réalisations',
-            'Formulaire de contact et de demande de devis',
-            'Optimisation pour la recherche locale',
+            'Maquettes Figma, XD, Sketch',
+            'Respect de vos conventions de code',
+            'Tests de responsive sur appareils réels',
         ],
         displayButton: false,
         buttonText: '',
@@ -28,15 +39,14 @@ const independentProOffers = [
     },
     {
         id: '2',
-        title: 'Application Métier Sur-Mesure',
+        title: 'Développement WordPress',
         subtitle:
-            'Optimisez votre gestion quotidienne avec un outil créé pour vous : suivi de chantiers, plannings, facturation, espace client...',
-        price: 'Sur devis',
+            'Intégration de thèmes sur-mesure (ACF, CPT) ou adaptation de fonctionnalités spécifiques sur des sites existants.',
+        // price: 'Sur devis',
         features: [
-            'Analyse de vos processus de travail',
-            'Développement 100% personnalisé',
-            'Interface simple pour vos équipes',
-            'Accessible sur mobile et ordinateur',
+            'Création de thèmes "blocs" (FSE)',
+            'Développement de plugins sur-mesure',
+            'Optimisation de performance',
         ],
         displayButton: false,
         buttonText: '',
@@ -45,15 +55,14 @@ const independentProOffers = [
     },
     {
         id: '3',
-        title: 'Forfait "Tranquillité"',
+        title: 'Renfort Ponctuel (Régie)',
         subtitle:
-            "Pour que votre site reste sécurisé, à jour et performant sans que vous ayez à vous en soucier. Je m'occupe de la technique, vous vous occupez de votre entreprise.",
-        price: 'À partir de 100€/mois',
+            "Besoin d'un coup de feu ? Je m'intègre à votre équipe pour une mission de courte durée (TJM ou forfait) pour vous aider à boucler un projet.",
+        // price: 'À partir de 100€/mois',
         features: [
-            'Mises à jour techniques et de sécurité',
-            'Sauvegardes régulières du site',
-            'Assistance rapide en cas de problème',
-            'Ajout de contenus ou de photos (optionnel)',
+            'Intégration rapide à l\'équipe',
+            'Disponible en télétravail',
+            'Tarif journalier clair',
         ],
         displayButton: false,
         buttonText: '',
@@ -68,119 +77,101 @@ const WebAgency = () => {
     return (
         <>
             <Hero
-                title="Entreprise locale&nbsp;? Offrez à votre savoir-faire un vrai coup de neuf en ligne."
-                keyWord="coup de neuf"
-                subtitle="Un site professionnel pour inspirer confiance, simplifier vos demandes de devis et attirer plus de clients dans votre secteur."
-                buttonText="Demander un audit"
+                title="Partenaire Front-end Fiable pour Agences Web"
+                keyWord="Front-end"
+                subtitle="Besoin d'un renfort en marque blanche ? Je livre du code propre, documenté et optimisé pour vos projets clients. Flexibilité, rigueur et 10 ans d'expérience en stratégie marketing."
+                buttonText="Planifier un échange"
                 isLink={false}
                 starsBg={true}
             />
+            {/* <p>Basée en Alsace • Collaboration à distance dans toute la France</p> */}
 
-            {/* <!-- ========= FONCTIONNEMENT ========= --> */}
+            {/* <!-- ========= OUTILS ET INTÉGRATIONS ========= --> */}
+            <Section
+                bgColor="grey"
+                paddingY="py-20"
+            >
+                <Content maxW="max-w-6xl">
+                    <TitleAndSubDisplay
+                        title="Une intégration fluide à votre workflow"
+                        subtitleVisible={true}
+                        subtitleContent="Je m'adapte à vos outils et à vos méthodes de travail pour une collaboration sans friction."
+                    />
+                    <div className="mt-12 flex flex-wrap justify-center items-center gap-8 md:gap-12 text-slate text-4xl md:text-5xl">
+                        <IconWithHoverEffect iconClass="fab fa-brands fa-github" label="Github" />
+                        <IconWithHoverEffect iconClass="fab fa-figma" label="Figma" />
+                        <IconWithHoverEffect iconClass="fab fa-trello" label="Trello" />
+                        <IconWithHoverEffect iconClass="fab fa-slack" label="Slack" />
+                        <IconWithHoverEffect iconClass="fab fa-notion" label="Notion" />
+                        <IconWithHoverEffect iconClass="fab fa-wordpress" label="WordPress" />
+                        <TooltipBubble text="Soyons fous !">
+                            <IconWithHoverEffect iconClass="fab fa-discord" label="Discord" />
+                        </TooltipBubble>
+                    </div>
+                </Content>
+            </Section>
+
+            {/* <!-- ========= GARANTIES ========= --> */}
             <Section
                 bgColor="white"
                 paddingY="py-20"
             >
                 <Content maxW="max-w-6xl">
                     <TitleAndSubDisplay
-                        title="Un site qui travaille pour vous, pas l'inverse."
+                        title="Plus qu'une simple ligne de code."
                         subtitleVisible={true}
-                        subtitle="Pas de jargon compliqué, juste des résultats. Mon objectif est de vous livrer un outil simple et efficace qui valorise votre travail."
+                        subtitle="Je m'engage sur la qualité du livrable, la pertinence stratégique et le respect des délais."
                     />
-
-                    <div className="mt-16 flex flex-row flex-wrap justify-center items-center gap-14">
+                    <div className="mt-16 flex flex-row flex-wrap justify-center items-stretch gap-14">
                         <div className="bg-light-bg p-8 rounded-lg max-w-2xs">
                             <h3 className="font-title text-xl font-bold text-(--color-dark-blue)">
-                                Inspirez Confiance
+                                Un code Durable & Documenté
                             </h3>
                             <p className="mt-4 text-[#687087]">
-                                Montrez votre professionnalisme avec un site moderne et une présentation claire de vos
-                                réalisations. Rassurer vos futurs clients avant même le premier contact.
+                                Je fournis un code sémantique, accessible (WCAG) et commenté, que vos équipes internes pourront facilement maintenir et faire évoluer.
                             </p>
                         </div>
-
                         <div className="bg-light-bg p-8 rounded-lg max-w-2xs">
-                            <h3 className="font-title text-xl font-bold text-(--color-dark-blue)">Gagnez du Temps</h3>
+                            <h3 className="font-title text-xl font-bold text-(--color-dark-blue)">Vision Stratégique</h3>
                             <p className="mt-4 text-[#687087]">
-                                Réduisez les appels pour des questions simples. Un formulaire de devis bien pensé et une
-                                foire aux questions vous libèrent du temps pour votre métier.
+                                Grâce à 10 ans en marketing, je comprends les enjeux business de vos clients. Je suis pro-active pour suggérer des améliorations ergonomiques, pas seulement exécuter. Nous regardons dans la même direction.
                             </p>
                         </div>
-
                         <div className="bg-light-bg p-8 rounded-lg max-w-2xs">
                             <h3 className="font-title text-xl font-bold text-(--color-dark-blue)">
-                                Soyez Visible Localement
+                                Fiabilité & Délais
                             </h3>
                             <p className="mt-4 text-[#687087]">
-                                Assurez-vous que les clients de votre région vous trouvent facilement sur Google quand
-                                ils ont besoin de vos services. C'est essentiel.
+                                Une communication claire et des livraisons dans les temps. Je m'engage sur un calendrier et je le tiens. C'est la base d'un partenariat sain.
                             </p>
                         </div>
                     </div>
                 </Content>
             </Section>
 
-            {/* ========= SECTION PACKS ========= */}
+            {/* ========= OFFRES ========= */}
             <OffersSection
-                title="Des solutions directes et adaptées aux artisans"
-                subtitle=""
-                visibleNoteContent={true}
-                noteStyle="advanced"
-                noteContent={
-                    <>
-                        <span className="italic block mt-2">
-                            Comme toujours, le règlement en plusieurs fois est possible pour maîtriser votre budget.
-                        </span>
-                    </>
-                }
-                offers={independentProOffers}
+                title="Ce que je peux faire pour vous"
+                subtitle="Mes Services en Marque Blanche"
+                offers={agenciesOffers}
             />
 
-            {/* <!-- ========= MINI PORTFOLIO ========= --> */}
+            {/* <!-- ========= PORTFOLIO ========= --> */}
             <PortfolioSection
                 portfolioData={portfolioCollection.filter(
                     (project) => project.category && project.category.includes('business'),
                 )}
-                portfolioTitle="Quelques références dans votre secteur"
+                portfolioTitle="Exemples de projets"
             />
-
-            {/* <!-- ========= SECTION RÉASSURANCE ========= --> */}
-            <Section
-                bgColor="white"
-                paddingY="py-20"
-            >
-                <Content maxW="max-w-6xl">
-                    <div className="bg-dark-blue text-center text-white p-10 md:p-16 rounded-lg">
-                        <h2 className="text-3xl md:text-4xl font-bold font-title">
-                            Prêt à donner un coup de boost à votre image&nbsp;?
-                        </h2>
-                        <p className="mt-4 max-w-2xl mx-auto text-lg text-light-slate">
-                            Au-delà de l'esthétique, votre site doit être un allié pour votre business. Mon objectif :
-                            vous livrer un outil{' '}
-                            <strong className="text-accent">efficace, qui convertit vos visiteurs en clients</strong> et
-                            vous libère du temps pour vous concentrer sur votre cœur de métier.
-                        </p>
-                    </div>
-                </Content>
-            </Section>
 
             {/* <!-- ========= CALL TO ACTION ========= --> */}
             <CallToAction
-                title={
-                    <>
-                        Trouvons le meilleur moyen
-                        <br />
-                        de vous faire connaître
-                    </>
-                }
-                displayTitle={true}
-                subtitle="Prêt à passer à l'action ?"
-                displaySeparation={false}
-                isButton={true}
-                isLinkAppearance={false}
-                linkText="Prenons contact"
-                buttonAction={open}
+                title="Prêt·e à renforcer votre équipe ?"
+                subtitle="Que ce soit pour un projet ponctuel ou une collaboration récurrente, je suis prête à m'adapter à vos besoins. Discutons de vos projets."
+                buttonText="Plannifier un appel"
+                onButtonClick={open}
             />
+            {/* Ajout d'un double CTA : voir mon profil LinkedIn */}
         </>
     );
 };
