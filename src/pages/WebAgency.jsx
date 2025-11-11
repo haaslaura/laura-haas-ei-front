@@ -1,18 +1,23 @@
+import Content from '../layouts/Content';
+import Section from '../layouts/Section';
+
 import CallToAction from '../components/CallToAction';
 import Hero from '../components/Hero';
 import OffersSection from '../components/OffersSection';
 import PortfolioSection from '../components/PortfolioSection';
-import IconWithHoverEffect from '../components/UI/iconDisplay/IconWithHoverEffect';
+import IconWithHoverEffect from '../components/UI/icon/IconWithHoverEffect';
 import TooltipBubble from '../components/UI/TooltipBubble';
 import TitleAndSubDisplay from '../components/UI/TitleAndSubDisplay';
-import portfolioCollection from '../data/portfolioCollection.json';
-import Content from '../layouts/Content';
-import Section from '../layouts/Section';
+import CustomizedStamp from '../components/UI/stamp/CustomizedStamp';
+
 import { useContactModal } from '../store/useContactModal';
+
+import portfolioCollection from '../data/portfolioCollection.json';
+
+
 
 /**
  * TODO :
- * - Ajout d'un double CTA : voir mon profil LinkedIn
  * - Portfolio spécial Agence
  * - Corriger la section Services
  * - Intégrer les langages de programmation / CMS / techno
@@ -75,7 +80,19 @@ const WebAgency = () => {
     const { open } = useContactModal();
 
     return (
-        <>
+        <div className='relative'>
+            <CustomizedStamp
+                size={140}
+                text={`Basée
+                    en Alsace
+                    •
+                    J'interviens
+                    partout`}
+                ariaLabel="Je suis basée en Alsace mais j'interviens partout en France"
+                topPosition="3rem"
+                leftPosition="3rem"
+            />
+
             <Hero
                 title="Partenaire Front-end Fiable pour Agences Web"
                 keyWord="Front-end"
@@ -84,7 +101,6 @@ const WebAgency = () => {
                 isLink={false}
                 starsBg={true}
             />
-            {/* <p>Basée en Alsace • Collaboration à distance dans toute la France</p> */}
 
             {/* <!-- ========= OUTILS ET INTÉGRATIONS ========= --> */}
             <Section
@@ -154,6 +170,7 @@ const WebAgency = () => {
                 title="Ce que je peux faire pour vous"
                 subtitle="Mes Services en Marque Blanche"
                 offers={agenciesOffers}
+                visibleNoteContent={false}
             />
 
             {/* <!-- ========= PORTFOLIO ========= --> */}
@@ -168,11 +185,15 @@ const WebAgency = () => {
             <CallToAction
                 title="Prêt·e à renforcer votre équipe ?"
                 subtitle="Que ce soit pour un projet ponctuel ou une collaboration récurrente, je suis prête à m'adapter à vos besoins. Discutons de vos projets."
-                buttonText="Plannifier un appel"
+                displaySeparation={false}
+
+                isButton={true}
+                linkText={`Plannifier un appel découverte`.toUpperCase()}
                 onButtonClick={open}
+
+                isSecondLink={true}
             />
-            {/* Ajout d'un double CTA : voir mon profil LinkedIn */}
-        </>
+        </div>
     );
 };
 

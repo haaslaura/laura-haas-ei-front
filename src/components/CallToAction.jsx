@@ -27,9 +27,9 @@ import ButtonDisplay from './UI/ButtonDisplay';
  */
 const CallToAction = ({
     title = 'Prêt à donner vie à votre projet\u00A0?',
-    displayTitle = 'true',
+    displayTitle = true,
     subtitle = 'Contactez-moi pour un échange sans engagement',
-    displaySeparation = 'true',
+    displaySeparation = true,
 
     isButton = true,
     isLinkAppearance = false,
@@ -39,9 +39,12 @@ const CallToAction = ({
 
     url = '',
     blank = false,
+
+    isSecondLink = false,
+
 }) => {
     return (
-        <section className="bg-[var(--color-dark-blue)] text-white flex flex-col items-center">
+        <section className="bg-(--color-dark-blue) text-white flex flex-col items-center">
             <div
                 className={
                     'cta-lh-container max-w-md mx-4 py-16 text-center ' +
@@ -55,38 +58,51 @@ const CallToAction = ({
                     <h3 className="text-xl font-bold mb-3">{title}</h3>
                 )}
 
-                <p className="text-[var(--color-slate)] mb-8">{subtitle}</p>
+                <p className="text-(--color-slate) mb-8">{subtitle}</p>
 
-                {/* Display a button for an action */}
-                {/* Or display a link for the navigation */}
-                {isButton ? (
-                    isLinkAppearance ? (
-                        <button
-                            onClick={buttonAction}
-                            className="underline underline-offset-2 text-accent font-semibold"
+                <div className='flex flex-row items-center justify-center gap-8 flex-wrap'>
+                    {/* Display a button for an action */}
+                    {/* Or display a link for the navigation */}
+                    {isButton ? (
+                        isLinkAppearance ? (
+                            <button
+                                onClick={buttonAction}
+                                className="underline underline-offset-2 text-accent font-semibold"
+                            >
+                                {linkText}
+                            </button>
+                        ) : (
+                            <ButtonDisplay
+                                text={linkText}
+                                buttonAction={buttonAction}
+                            />
+                        )
+                    ) : isLinkAppearance ? (
+                        <Link
+                            to={url}
+                            blank={blank}
                         >
                             {linkText}
-                        </button>
+                        </Link>
                     ) : (
-                        <ButtonDisplay
+                        <LinkDisplayLikeAButton
                             text={linkText}
-                            buttonAction={buttonAction}
+                            link={url}
+                            blank={blank}
                         />
-                    )
-                ) : isLinkAppearance ? (
-                    <Link
-                        to={url}
-                        blank={blank}
-                    >
-                        {linkText}
-                    </Link>
-                ) : (
-                    <LinkDisplayLikeAButton
-                        text={linkText}
-                        link={url}
-                        blank={blank}
-                    />
-                )}
+                    )}
+
+                    {/* LinkedIn link */}
+                    {isSecondLink && (
+                        <Link
+                            to="https://www.linkedin.com/in/laurahaas-developpement/"
+                            target="_blank"
+                            className="text-(--color-slate) hover:text-accent font-semibold"
+                        >
+                            Voir mon profil LinkedIn <i className="fab fa-linkedin"></i>
+                        </Link>
+                    )}
+                </div>
             </div>
         </section>
     );
