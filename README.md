@@ -85,3 +85,6 @@ src/
 ├── App.jsx                         # Routes
 ├── index.jsx
 ```
+
+## 🔮 À venir :
+- (fin 2025) Création d'un landing page destinée aux agences web
