@@ -13,7 +13,7 @@ import LegalInfo from './pages/LegalInfo';
 import WebAgency from './pages/WebAgency';                  // Pour les agences web
 
 // Others
-import ContactModal from './components/ContactModal';
+import ContactModal from './features/ContactModal';
 import ScrollToTop from './utils/ScrollToTop';
 import ToTopButton from './components/UI/ToTopButton';
 

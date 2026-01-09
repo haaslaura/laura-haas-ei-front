@@ -4,7 +4,7 @@ import StageSection from '../components/StageSection';
 import OffersSection from '../components/OffersSection';
 import TestimonialSection from '../components/TestimonialSection';
 import CallToAction from '../components/CallToAction';
-import { useContactModal } from '../store/useContactModal';
+import { useContactModal } from '../features/ContactModal/store/useContactModal';
 
 const homePackOffers = [
     {

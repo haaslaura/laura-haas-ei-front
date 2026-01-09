@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Section from '../layouts/Section';
 import Content from '../layouts/Content';
-import { useContactModal } from '../store/useContactModal';
+import { useContactModal } from '../features/ContactModal/store/useContactModal';
 
 const LegalInfo = () => {
     const { open } = useContactModal();

@@ -6,7 +6,7 @@ import TitleAndSubDisplay from '../components/UI/TitleAndSubDisplay';
 import portfolioCollection from '../data/portfolioCollection.json';
 import Content from '../layouts/Content';
 import Section from '../layouts/Section';
-import { useContactModal } from '../store/useContactModal';
+import { useContactModal } from '../features/ContactModal/store/useContactModal';
 
 const independentProOffers = [
     {

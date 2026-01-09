@@ -8,7 +8,7 @@
  * @param {string} label - Texte sous l'icône.
  * @returns {JSX.Element}
  */
-const IconWithHoverEffect = ({ iconClass, label }) => {
+const IconWithEffect = ({ iconClass, label }) => {
     return (
         <div className="text-center group select-none">
             <i
@@ -32,4 +32,4 @@ const IconWithHoverEffect = ({ iconClass, label }) => {
     );
 };
 
-export default IconWithHoverEffect;
+export default IconWithEffect;

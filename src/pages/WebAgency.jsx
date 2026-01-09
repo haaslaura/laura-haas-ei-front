@@ -5,15 +5,13 @@ import CallToAction from '../components/CallToAction';
 import Hero from '../components/Hero';
 import OffersSection from '../components/OffersSection';
 import PortfolioSection from '../components/PortfolioSection';
-import IconWithHoverEffect from '../components/UI/icon/IconWithHoverEffect';
+import IconWithEffect from '../components/UI/icon/IconWithEffect';
 import TooltipBubble from '../components/UI/TooltipBubble';
 import TitleAndSubDisplay from '../components/UI/TitleAndSubDisplay';
 import CustomizedStamp from '../components/UI/stamp/CustomizedStamp';
 
-import { useContactModal } from '../store/useContactModal';
-
+import { useContactModal } from '../features/ContactModal/store/useContactModal';
 import portfolioCollection from '../data/portfolioCollection.json';
-
 
 
 /**
@@ -94,13 +92,38 @@ const WebAgency = () => {
             />
 
             <Hero
-                title="Partenaire Front-end Fiable pour Agences Web"
+                title="Partenaire Front-end pour Agences Web"
                 keyWord="Front-end"
-                subtitle="Besoin d'un renfort en marque blanche ? Je livre du code propre, documenté et optimisé pour vos projets clients. Flexibilité, rigueur et 10 ans d'expérience en stratégie marketing."
+                subtitle="Besoin d'un renfort en marque blanche ? Je livre du code propre, commenté et optimisé pour vos projets clients. Flexibilité, rigueur et 10 ans d'expérience en stratégie marketing."
                 buttonText="Planifier un échange"
                 isLink={false}
                 starsBg={true}
             />
+
+            {/* <!-- ========= LANGAGES ========= --> */}
+            <Section
+                bgColor="white"
+                paddingY="py-20"
+            >
+                <Content maxW="max-w-6xl">
+                    <TitleAndSubDisplay
+                        title="Ma Stack Technique"
+                        subtitleVisible={true}
+                        subtitleContent="Des technologies modernes pour des projets performants et une maintenabilité garantie."
+                    />
+                    <div className="mt-12 flex flex-wrap justify-center items-center gap-8 md:gap-12 text-slate text-4xl md:text-5xl">
+                        <IconWithEffect iconClass="fab fa-brands fa-github" label="Github" />
+                        <IconWithEffect iconClass="fab fa-figma" label="Figma" />
+                        <IconWithEffect iconClass="fab fa-trello" label="Trello" />
+                        <IconWithEffect iconClass="fab fa-slack" label="Slack" />
+                        <IconWithEffect iconClass="fab fa-notion" label="Notion" />
+                        <IconWithEffect iconClass="fab fa-wordpress" label="WordPress" />
+                        <TooltipBubble text="Soyons fous !">
+                            <IconWithEffect iconClass="fab fa-discord" label="Discord" />
+                        </TooltipBubble>
+                    </div>
+                </Content>
+            </Section>
 
             {/* <!-- ========= OUTILS ET INTÉGRATIONS ========= --> */}
             <Section
@@ -114,14 +137,14 @@ const WebAgency = () => {
                         subtitleContent="Je m'adapte à vos outils et à vos méthodes de travail pour une collaboration sans friction."
                     />
                     <div className="mt-12 flex flex-wrap justify-center items-center gap-8 md:gap-12 text-slate text-4xl md:text-5xl">
-                        <IconWithHoverEffect iconClass="fab fa-brands fa-github" label="Github" />
-                        <IconWithHoverEffect iconClass="fab fa-figma" label="Figma" />
-                        <IconWithHoverEffect iconClass="fab fa-trello" label="Trello" />
-                        <IconWithHoverEffect iconClass="fab fa-slack" label="Slack" />
-                        <IconWithHoverEffect iconClass="fab fa-notion" label="Notion" />
-                        <IconWithHoverEffect iconClass="fab fa-wordpress" label="WordPress" />
+                        <IconWithEffect iconClass="fab fa-brands fa-github" label="Github" />
+                        <IconWithEffect iconClass="fab fa-figma" label="Figma" />
+                        <IconWithEffect iconClass="fab fa-trello" label="Trello" />
+                        <IconWithEffect iconClass="fab fa-slack" label="Slack" />
+                        <IconWithEffect iconClass="fab fa-notion" label="Notion" />
+                        <IconWithEffect iconClass="fab fa-wordpress" label="WordPress" />
                         <TooltipBubble text="Soyons fous !">
-                            <IconWithHoverEffect iconClass="fab fa-discord" label="Discord" />
+                            <IconWithEffect iconClass="fab fa-discord" label="Discord" />
                         </TooltipBubble>
                     </div>
                 </Content>
@@ -188,8 +211,14 @@ const WebAgency = () => {
                 displaySeparation={false}
 
                 isButton={true}
-                linkText={`Plannifier un appel découverte`.toUpperCase()}
-                onButtonClick={open}
+                linkText={`Plannifier un échange`.toUpperCase()}
+                buttonAction={(e) => {
+                    try {
+                        const detail = e?.currentTarget ?? null;
+                        window.dispatchEvent(new CustomEvent('contactOpener', { detail }));
+                    } catch {}
+                    open({ defaultView: 'schedule' });
+                }}
 
                 isSecondLink={true}
             />

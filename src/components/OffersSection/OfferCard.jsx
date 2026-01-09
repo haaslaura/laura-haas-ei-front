@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useContactModal } from '../../store/useContactModal';
+import { useContactModal } from '../../features/ContactModal/store/useContactModal';
 
 const styleOptions = {
     false: {

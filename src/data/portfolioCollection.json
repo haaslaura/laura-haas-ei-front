@@ -33,16 +33,27 @@
         "tech": ["WordPress"]
     },
     {
-        "id": "4",
-        "category": ["starter", "independent", "business"],
-        "title": "Travaux Béton & Structures",
-        "cover": "travaux-beton-et-structures.webp",
-        "link": "https://tbs67.fr",
-        "frontText": "Un site clair et impactant pour affirmer expertise et savoir-faire.",
-        "objective": "Mettre en valeur une équipe expérimentée et créer une marque employeur forte, même avec une identité toute récente.",
-        "resultat": "Un référencement express — moins d'une semaine — qui a rapidement généré de nouvelles demandes de devis.",
-        "tech": ["WordPress", "Fiche d'établissement Google"]
+        "id": "7",
+        "category": ["business"],
+        "title": "Titre",
+        "cover": "snee.webp",
+        "link": "https://snee.fr",
+        "frontText": "Un site informatif pour ...",
+        "objective": "Créer un site clair et accessible pour informer les usagers sur les services et actualités de la SNEE.",
+        "resultat": "Une présence en ligne professionnelle qui facilite la communication avec les clients et partenaires.",
+        "tech": ["React"]
     },
+    {
+        "id": "8",
+        "category": ["business"],
+        "title": "Titre",
+        "cover": "snee.webp",
+        "link": "https://snee.fr",
+        "frontText": "Un site informatif...",
+        "objective": "Créer un site clair et accessible pour informer les usagers sur les services et actualités de la SNEE.",
+        "resultat": "Une présence en ligne professionnelle qui facilite la communication avec les clients et partenaires.",
+        "tech": ["React"]
+    },    
     {
         "id": "5",
         "category": ["independent", "business"],
@@ -64,5 +75,16 @@
         "objective": "Auditer l'ancien site du musée et ses réseaux sociaux pour proposer une nouvelle stratégie digitale.",
         "resultat": "Un document d'analyse et de recommandations qui a guidé la refonte du site par une agence spécialisée.",
         "tech": ["/"]
+    },
+    {
+        "id": "4",
+        "category": ["starter", "independent", "business"],
+        "title": "Travaux Béton & Structures",
+        "cover": "travaux-beton-et-structures.webp",
+        "link": "https://tbs67.fr",
+        "frontText": "Un site clair et impactant pour affirmer expertise et savoir-faire.",
+        "objective": "Mettre en valeur une équipe expérimentée et créer une marque employeur forte, même avec une identité toute récente.",
+        "resultat": "Un référencement express — moins d'une semaine — qui a rapidement généré de nouvelles demandes de devis.",
+        "tech": ["WordPress", "Fiche d'établissement Google"]
     }
 ]
