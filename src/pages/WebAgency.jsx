@@ -29,7 +29,7 @@ const agenciesOffers = [
         title: 'Intégration Front-End',
         subtitle:
             'Intégration HTML/CSS/JS (Tailwind, etc.) à partir de vos maquettes Figma. Responsive, pixel-perfect et optimisé.',
-        // price: 'à partir de 1500€',
+        price: 'à partir de 350€/jour',
         features: [
             'Maquettes Figma, XD, Sketch',
             'Respect de vos conventions de code',
@@ -45,9 +45,9 @@ const agenciesOffers = [
         title: 'Développement WordPress',
         subtitle:
             'Intégration de thèmes sur-mesure (ACF, CPT) ou adaptation de fonctionnalités spécifiques sur des sites existants.',
-        // price: 'Sur devis',
+        price: 'Sur devis',
         features: [
-            'Création de thèmes "blocs" (FSE)',
+            'Création de thèmes "blocs"',
             'Développement de plugins sur-mesure',
             'Optimisation de performance',
         ],
@@ -61,7 +61,7 @@ const agenciesOffers = [
         title: 'Renfort Ponctuel (Régie)',
         subtitle:
             "Besoin d'un coup de feu ? Je m'intègre à votre équipe pour une mission de courte durée (TJM ou forfait) pour vous aider à boucler un projet.",
-        // price: 'À partir de 100€/mois',
+        price: 'À partir de 350€/jour',
         features: [
             'Intégration rapide à l\'équipe',
             'Disponible en télétravail',
@@ -111,16 +111,15 @@ const WebAgency = () => {
                         subtitleVisible={true}
                         subtitleContent="Des technologies modernes pour des projets performants et une maintenabilité garantie."
                     />
-                    <div className="mt-12 flex flex-wrap justify-center items-center gap-8 md:gap-12 text-slate text-4xl md:text-5xl">
-                        <IconWithEffect iconClass="fab fa-brands fa-github" label="Github" />
-                        <IconWithEffect iconClass="fab fa-figma" label="Figma" />
-                        <IconWithEffect iconClass="fab fa-trello" label="Trello" />
-                        <IconWithEffect iconClass="fab fa-slack" label="Slack" />
-                        <IconWithEffect iconClass="fab fa-notion" label="Notion" />
-                        <IconWithEffect iconClass="fab fa-wordpress" label="WordPress" />
-                        <TooltipBubble text="Soyons fous !">
-                            <IconWithEffect iconClass="fab fa-discord" label="Discord" />
-                        </TooltipBubble>
+                    <div className="mt-12 flex flex-wrap justify-center items-center gap-8 md:gap-12 text-4xl md:text-5xl">
+                        <IconWithEffect defaultColor="text-yellow-500" animation="zoom" iconClass="fab fa-brands fa-js" label="JavaScript" />
+                        <IconWithEffect defaultColor="text-blue-400" animation="zoom" iconClass="fab fa-react" label="React.js" />
+                        <IconWithEffect defaultColor="text-green-500" animation="zoom" iconClass="fab fa-vuejs" label="Vue.js" />
+                        <IconWithEffect defaultColor="text-purple-500" animation="zoom" iconClass="fa-solid fa-magnifying-glass-chart" label="Zustand" />
+                        <IconWithEffect defaultColor="text-cyan-400" animation="zoom" iconClass="" label="Tailwind" />
+                        <IconWithEffect defaultColor="text-red-500" animation="zoom" iconClass="fa-solid fa-vial" label="Vitest" />
+                        <IconWithEffect defaultColor="text-blue-600" animation="zoom" iconClass="fa-brands fa-wordpress-simple" label="WordPress" />
+                        <IconWithEffect defaultColor="text-pink-500" animation="zoom" iconClass="fab fa-elementor" label="Elementor" />
                     </div>
                 </Content>
             </Section>

@@ -35,24 +35,24 @@
     {
         "id": "7",
         "category": ["business"],
-        "title": "Titre",
-        "cover": "snee.webp",
-        "link": "https://snee.fr",
-        "frontText": "Un site informatif pour ...",
-        "objective": "Créer un site clair et accessible pour informer les usagers sur les services et actualités de la SNEE.",
-        "resultat": "Une présence en ligne professionnelle qui facilite la communication avec les clients et partenaires.",
+        "title": "Démo",
+        "cover": "2026-demo.webp",
+        "link": "https://demo.laura-haas.dev/",
+        "frontText": "Découvrez quelques fonctionnalités sur lesquelles j'ai travaillé.",
+        "objective": "Créer une démo interactive pour illustrer mes compétences en développement front-end.",
+        "resultat": "Une vitrine dynamique qui met en avant mon savoir-faire technique et ma créativité.",
         "tech": ["React"]
     },
     {
         "id": "8",
         "category": ["business"],
-        "title": "Titre",
-        "cover": "snee.webp",
-        "link": "https://snee.fr",
-        "frontText": "Un site informatif...",
-        "objective": "Créer un site clair et accessible pour informer les usagers sur les services et actualités de la SNEE.",
-        "resultat": "Une présence en ligne professionnelle qui facilite la communication avec les clients et partenaires.",
-        "tech": ["React"]
+        "title": "Plateforme Déblai Remblai (PDR)",
+        "cover": "2025-plateforme-deblais-remblai-pdr.webp",
+        "link": "https://www.p-dr.fr",
+        "frontText": "Permettre la mise en relation entre les acteurs du BTP pour la gestion des terres excavées.",
+        "objective": "Développer une application web intuitive facilitant l'échange d'informations et la gestion des transactions entre les entreprises de construction et les sites de réception.",
+        "resultat": "Actuellement en beta privée, la plateforme a déjà suscité l'intérêt de plusieurs acteurs du secteur, promettant une amélioration significative de la logistique des terres excavées.",
+        "tech": ["React", "Zustand", "Tailwind", "Leaflet"]
     },    
     {
         "id": "5",
@@ -63,7 +63,7 @@
         "frontText": "Une application de méditation pour s'offrir une parenthèse de sérénité.",
         "objective": "Allier découverte de Vue.js et pratique de Tailwind pour concevoir une application simple et apaisante.",
         "resultat": "Un projet technique formateur qui a donné naissance à une application en ligne prête à l'emploi.",
-        "tech": ["Vue", "Tailwind"]
+        "tech": ["Vue.js", "Tailwind"]
     },
     {
         "id": "6",
