@@ -119,6 +119,16 @@ function Header() {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink
+                            to="/agence-web"
+                            className={({ isActive }) =>
+                                `hover:text-(--color-accent) transition-all ${isActive ? 'text-(--color-accent)' : ''}`
+                            }
+                        >
+                            Agence web
+                        </NavLink>
+                    </li>
+                    <li>
                         <button
                             onClick={(e) => {
                                 // transmet l'élément ouvreur à la modale via un CustomEvent
@@ -189,6 +199,14 @@ function Header() {
                                 to="/entreprise-locale"
                             >
                                 Entreprises locales
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                to="/agence-web"
+                            >
+                                Agence web
                             </Link>
                         </li>
                         <li>

@@ -76,10 +76,9 @@ const Home = () => {
                 displayTitle={false}
                 subtitle="Je collabore en marque blanche et propose des renforts fiables en développement front-end."
                 displaySeparation={false}
-                isButton={true}
-                isLinkAppearance={true}
-                linkText="Échangeons à ce sujet"
-                buttonAction={open}
+                isButton={false}
+                linkText="Découvrez nos offres"
+                url="/agence-web"
             />
         </section>
     );
