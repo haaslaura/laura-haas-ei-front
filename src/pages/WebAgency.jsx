@@ -77,6 +77,11 @@ const agenciesOffers = [
 const WebAgency = () => {
     const { open } = useContactModal();
 
+    // fonction pour filtrer les projets et ne conserver que ceux qui ne contiennent pas l'id "7"
+    const temporaryFilteredPortfolio = portfolioCollection.filter(
+        (project) => project.id !== '7',
+    );
+
     return (
         <div className='relative'>
             <CustomizedStamp
@@ -116,7 +121,7 @@ const WebAgency = () => {
                         <IconWithEffect defaultColor="text-blue-400" animation="zoom" iconClass="fab fa-react" label="React.js" />
                         <IconWithEffect defaultColor="text-green-500" animation="zoom" iconClass="fab fa-vuejs" label="Vue.js" />
                         <IconWithEffect defaultColor="text-purple-500" animation="zoom" iconClass="fa-solid fa-magnifying-glass-chart" label="Zustand" />
-                        <IconWithEffect defaultColor="text-cyan-400" animation="zoom" iconClass="" label="Tailwind" />
+                        <IconWithEffect defaultColor="text-cyan-400" animation="zoom" iconClass="fa-solid fa-brush" label="Tailwind" />
                         <IconWithEffect defaultColor="text-red-500" animation="zoom" iconClass="fa-solid fa-vial" label="Vitest" />
                         <IconWithEffect defaultColor="text-blue-600" animation="zoom" iconClass="fa-brands fa-wordpress-simple" label="WordPress" />
                         <IconWithEffect defaultColor="text-pink-500" animation="zoom" iconClass="fab fa-elementor" label="Elementor" />
@@ -197,7 +202,7 @@ const WebAgency = () => {
 
             {/* <!-- ========= PORTFOLIO ========= --> */}
             <PortfolioSection
-                portfolioData={portfolioCollection.filter(
+                portfolioData={temporaryFilteredPortfolio.filter(
                     (project) => project.category && project.category.includes('business'),
                 )}
                 portfolioTitle="Exemples de projets"
