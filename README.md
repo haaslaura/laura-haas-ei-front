@@ -1,30 +1,38 @@
-# Site Web - Développeuse Web Indépendante
+# WebSite - Freelance Web Developer
 
-Ce projet est le site vitrine de mon activité de création de sites web, développé avec **React** et **Vite**, en utilisant **React Router** pour la navigation.
+This project is the showcase website for my web design business, built using **React** and **Vite**, with **React Router** for navigation.
 
-## 📌 Objectif
+## 📌 Objectives
 
-Ce site a pour objectif de :
+The aim of this website is to:
 
-- Présenter mes offres de manière claire
-- S’adresser à plusieurs profils clients via des pages dédiées
-- Instaurer confiance et crédibilité
+- Present my services clearly
+- Cater to a range of client profiles through dedicated pages
+- Build trust and credibility
 
-## 🔧 Stack technique
+## 🚀 Technologies Used
 
-React
-Vite
-Tailwind CSS
-React Router
+- React
+- Vite
+- Tailwind CSS
+- React Router
 
-## 🚀 Lancer le projet
+## Back-end part
 
-```bash
-npm install
-npm run dev
-```
+You can find the Back-end project and any informations about it at (https://github.com/haaslaura/laura-haas-ei-back).
 
-## 📁 Arborescence du projet
+## ⚙️ Installation & Setup
+
+To run the project locally:
+
+1. Clone the repository:
+`git clone https://github.com/haaslaura/laura-haas-ei-front.git`
+
+2. Install dependencies: `npm install`
+
+3. Start the project : `npm run dev`
+
+## 📁 Tree structure
 
 ```bash
 src/
@@ -86,5 +94,10 @@ src/
 ├── index.jsx
 ```
 
-## 🔮 À venir :
-- (fin 2025) Création d'un landing page destinée aux agences web
+## 🔮 Update & Incoming :
+In early 2026, a landing page aimed at web agencies was added. There are plans to add a blog section later this year.
+
+## 📬 Contact
+Feel free to reach out via [LinkedIn](https://www.linkedin.com/in/laurahaas-developpement/) if you have any questions or feedback!
+
+This projet is a work in progress. Stay tuned for updates! 🚀
